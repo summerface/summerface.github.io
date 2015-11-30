@@ -1,0 +1,317 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>jquery-mobile content&amp;widgets | 纪晔</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="jquery mobile包含的touch组件包括： &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;form elements, collapsibles, collapsible sets (accordions), popups, dialogs, respo">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/pic.jpg" alt="纪晔" title="纪晔"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="纪晔">纪晔</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/30/jquery-mobile-content-widgets/" title="jquery-mobile content&amp;widgets" itemprop="url">jquery-mobile content&amp;widgets</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-11-30T05:45:13.000Z" itemprop="datePublished">2015-11-30</time>
+    更新日期:<time datetime="2015-11-30T07:10:49.000Z" itemprop="dateModified">2015-11-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jquery_mobile包含的touch组件包括："><span class="toc-number">1.</span> <span class="toc-text">jquery mobile包含的touch组件包括：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_listviews"><span class="toc-number">1.1.</span> <span class="toc-text">1. listviews</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_formElements"><span class="toc-number">1.2.</span> <span class="toc-text">2. formElements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_theme"><span class="toc-number">1.3.</span> <span class="toc-text">3. theme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-_buttons"><span class="toc-number">1.4.</span> <span class="toc-text">4. buttons</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用类："><span class="toc-number">1.4.1.</span> <span class="toc-text">常用类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#按钮种类"><span class="toc-number">1.4.2.</span> <span class="toc-text">按钮种类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-_选择框"><span class="toc-number">1.5.</span> <span class="toc-text">5. 选择框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-_单选框"><span class="toc-number">1.6.</span> <span class="toc-text">6. 单选框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-_collapsible"><span class="toc-number">1.7.</span> <span class="toc-text">7. collapsible</span></a></li></ol></li></ol>
+		</div>
+		
+		<h3 id="jquery_mobile包含的touch组件包括：">jquery mobile包含的touch组件包括：</h3><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;form elements, collapsibles, collapsible sets (accordions), popups, dialogs, responsive tables等。</p>
+<h4 id="1-_listviews">1. listviews</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;data-role=”listview”   data-inset=”true”  data-filter=”true” data-type=”search”</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"filter-for-listview"</span> <span class="attribute">data-type</span>=<span class="value">"search"</span> <span class="attribute">placeholder</span>=<span class="value">"Type to search..."</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">data-role</span>=<span class="value">"listview"</span> <span class="attribute">data-inset</span>=<span class="value">"true"</span> <span class="attribute">data-filter</span>=<span class="value">"true"</span> <span class="attribute">data-input</span>=<span class="value">"#filter-for-listview"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Acura<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Audi<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>BMW<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Cadillac<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Ferrari<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-_formElements">2. formElements</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;表单元素不需要data-role属性，但所有的表单一定要包含在form标签内部</p>
+<h4 id="3-_theme">3. theme</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;data-theme=”b”  把本页面内所有的风格变为黑色。</p>
+<h4 id="4-_buttons">4. buttons</h4><h5 id="常用类：">常用类：</h5><p>ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-shadow ui-btn-inline ui-btn-a ui-btn-b<br>ui-mini ui-btn-icon-left ui-btn-icon-right ui-btn-icon-top ui-btn-icon-bottom ui-btn-icon-notext<br>ui-state-disabled </p>
+<h5 id="按钮种类">按钮种类</h5><ul>
+<li>input标签，type=”reset” type=”submit” type=”button”</li>
+<li>data-enhanced,如果设置为 “true”, (default) jQuery Mobile 会自动为页面添加样式，使其更适合移动设备。如果设置为 “false”，则框架不会设置页面的样式。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">value</span>=<span class="value">"Left (default)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"right"</span> <span class="attribute">value</span>=<span class="value">"Right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"top"</span> <span class="attribute">value</span>=<span class="value">"Top"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"bottom"</span> <span class="attribute">value</span>=<span class="value">"Bottom"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"notext"</span> <span class="attribute">value</span>=<span class="value">"Icon only"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-left"</span>&gt;</span></span><br><span class="line">        Enhanced - Left</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Left"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-right"</span>&gt;</span></span><br><span class="line">        Enhanced - Right</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-top"</span>&gt;</span></span><br><span class="line">        Enhanced - Top</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Top"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-bottom"</span>&gt;</span></span><br><span class="line">        Enhanced - Bottom</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Bottom"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-notext"</span>&gt;</span></span><br><span class="line">        Enhanced - Icon only</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Icon only"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="5-_选择框">5. 选择框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"checkbox-0 "</span>&gt;</span>Check me</span><br><span class="line">    <span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>data-mini=”true” 设置大小</li>
+<li>fieldset加上data-role=”controlgroup”属性，设置为选择列表</li>
+<li>fieldset加上data-type=”horizontal”属性，设置为水平排列列表</li>
+<li>fieldset加上data-iconpos=”right”属性，设置label的位置</li>
+<li>fieldset加上data-theme=”b”,设置整体风格</li>
+<li>input加上disabled=””,设置为不可用选择框</li>
+</ul>
+<h4 id="6-_单选框">6. 单选框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"radio-choice-0"</span> <span class="attribute">id</span>=<span class="value">"radio-choice-0a"</span>&gt;</span>One</span><br><span class="line">    <span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"radio-choice-0b"</span>&gt;</span>Two<span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"radio-choice-0"</span> <span class="attribute">id</span>=<span class="value">"radio-choice-0b"</span> <span class="attribute">class</span>=<span class="value">"custom"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>fieldset加上data-role=”controlgroup”属性，设置为选择列表</li>
+<li>fieldset加上data-type=”horizontal”属性，设置为水平排列列表</li>
+<li>fieldset加上data-iconpos=”right”属性，设置label的位置</li>
+<li>fieldset加上data-theme=”b”,设置整体风格</li>
+<li>input加上disabled=””,设置为不可用选择框</li>
+</ul>
+<h4 id="7-_collapsible">7. collapsible</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-role</span>=<span class="value">"collapsible"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Heading<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>I'm the collapsible content. By default I'm closed, but you can click the header to open me.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>data-theme=”b” data-content-theme=”b” 给标题和内容分别设置theme</li>
+<li>默认展开 data-collapsed=”false”</li>
+<li>设置延展图标data-collapsed-icon=”carat-d” data-expanded-icon=”carat-u”</li>
+<li>不显示边界框 data-inset=”false”</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/11/30/jquery-mobile-content-widgets/" data-title="jquery-mobile content&amp;widgets | 纪晔" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/11/27/jquery-mobile学习/"  title="jquery-mobile学习">
+ <strong>NEXT:</strong><br/> 
+ <span>jquery-mobile学习
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jquery_mobile包含的touch组件包括："><span class="toc-number">1.</span> <span class="toc-text">jquery mobile包含的touch组件包括：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_listviews"><span class="toc-number">1.1.</span> <span class="toc-text">1. listviews</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_formElements"><span class="toc-number">1.2.</span> <span class="toc-text">2. formElements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_theme"><span class="toc-number">1.3.</span> <span class="toc-text">3. theme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-_buttons"><span class="toc-number">1.4.</span> <span class="toc-text">4. buttons</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用类："><span class="toc-number">1.4.1.</span> <span class="toc-text">常用类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#按钮种类"><span class="toc-number">1.4.2.</span> <span class="toc-text">按钮种类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-_选择框"><span class="toc-number">1.5.</span> <span class="toc-text">5. 选择框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-_单选框"><span class="toc-number">1.6.</span> <span class="toc-text">6. 单选框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-_collapsible"><span class="toc-number">1.7.</span> <span class="toc-text">7. collapsible</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/1936118572" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/https://github.com/summerface" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
