@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jquery-mobile学习 | 纪晔</title>
+  <title>tags | 纪晔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jquery-mobile学习笔记
-加载页面&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。
-对话框&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jquery-mobile学习">
-<meta property="og:url" content="http://summerface.github.io/2015/11/27/jquery-mobile学习/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="http://summerface.github.io/tags/index.html">
 <meta property="og:site_name" content="纪晔">
-<meta property="og:description" content="jquery-mobile学习笔记
-加载页面&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。
-对话框&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;">
-<meta property="og:updated_time" content="2015-11-27T03:28:32.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2015-12-03T14:35:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery-mobile学习">
-<meta name="twitter:description" content="jquery-mobile学习笔记
-加载页面&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。
-对话框&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;">
+<meta name="twitter:title" content="tags">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="纪晔" type="application/atom+xml">
   
@@ -43,7 +37,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: true,
+          isPost: false,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -224,11 +218,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-jquery-mobile学习" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="tags-undefined" class="article article-type-tags" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/27/jquery-mobile学习/" class="article-date">
-      <time datetime="2015-11-27T02:34:07.000Z" itemprop="datePublished">2015-11-27</time>
+      <a href="/tags/index.html" class="article-date">
+      <time datetime="2015-12-03T14:35:39.000Z" itemprop="datePublished">2015-12-03</time>
 </a>
     </div>
   
@@ -241,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jquery-mobile学习
+      tags
     </h1>
   
 
@@ -258,96 +252,120 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="jquery-mobile学习笔记">jquery-mobile学习笔记</h2><ol>
-<li>加载页面<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。</li>
-<li>对话框<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在指向页面链接元素中添加”data-rel”属性为”dialog”，则单击该链接的时候，打开的页面将以一个对话框的形式展示在浏览器中。单击对话框任意链接，对话框自动关闭，并以回退形式至上一页面。也可以在对话框中创建取消按钮，通过设置元素属性或编写js代码关闭对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在对话框添加链接按钮”data-rel”=”back”可关闭对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或者js代码 $(“.ui-dialog”).dialog(“close”);</li>
-<li>工具栏与格式化内容<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”data-add-back-btn”=”back”设置为回退按钮<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”data-back-btn－text”=”<em>*</em>“设置回退按钮的文字为＊＊＊</li>
-<li>“page”容器元素的“data-add-back-btn”为true时表示切换到该容器，头部栏显示默认的回退按钮。或者$.mobile.page.prototype.options.backBtnText=”<em>*</em>“<br>data-icon=”arrow-l”  “arrow-r” 分别显示左右按钮图标.<br>设定按钮位置 添加类别属性 class=”ui-btn-left” “ui-btn-right”.</li>
-<li>导航栏<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将div标签的data-role设置为navbar便会产生一个导航栏容器，在该容器内，将ul元素设置导航栏的各子类导航按钮，每一行最多可以设置5个按钮，超出个数的按钮自动显示在下一行，另外，导航栏中的按钮可以引用系统图标，也可以自定义图标。<br>class=”ui-btn-active”设置导航按钮为选中状态。</li>
-</ol>
+              <style>
+    .article-meta {
+        display: none;
+    }
+    #container .article .article-title {
+        padding-right: 0;
+    }
+    .article-header {
+        padding: 0;
+        padding-top: 26px;
+        border-left: none;
+        text-align: center;
+    }
+    .article-header:hover {
+        border-left: none;
+    }
+    .article-title {
+        font-size: 1.6em
+    }
+    .article-meta {
+        display: none;
+    }
+    .article-entry hr {
+        margin: 0;
+    }
+    #container .article-info-post.article-info {
+      display: none;
+      }
+    #container .article .article-title {
+    padding: 0;
+    }
+</style>
 
+
+    <!-- Tag Cloud Page -->
+    <hr>
+    <br>
+    
+
+    <p class="count"></p>
+
+    <div class="tags">
+        
+    </div>
+    <style>
+        .category-list li{
+            display: inline-block;
+            margin: 0 1em .5em 0;
+            padding: 4px;
+            border: 1px solid lightgray;
+            font-size: 1.2em;
+        }
+        .category-list a {
+            color: gray;
+        }
+        .category-list-item:hover a {
+            color: gray;
+            text-decoration: none;
+        }
+        .category-list-count {
+            margin-left: 2px;
+            font-size: .9em;
+        }
+        .article-entry ul li:before{
+            display: none;
+        }
+        .article-inner  {
+            text-align: center;
+        }
+        .tags {
+            max-width: 40em;
+            margin: 2em auto;
+            margin-top: 0em;
+        }
+        .tags a {
+            margin-right: 1em;
+            line-height: 65px;
+            border-bottom: 1px solid gray;
+            white-space: nowrap;
+        }
+        .tags a:hover {
+            border-bottom: 2px solid black;
+            text-decoration: none;
+            font-style: italic;
+        }
+        #count > span {
+            margin: auto .2em;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Count tags and categories -->
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <p id="count">
+            已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
+            共计<span><script>document.write($(".tags > a").length)</script></span>个标签。
+    </p>
+    <script>
+        $('#count').appendTo('.count');
+    </script>
+
+
+          
+        
       
     </div>
     
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/11/27/jquery-mobile学习/">jquery-mobile学习</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 纪晔 的个人博客">纪晔</a></p>
-        <p><span>发布时间:</span>2015年11月27日 - 10时34分</p>
-        <p><span>最后更新:</span>2015年11月27日 - 11时28分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/11/27/jquery-mobile学习/" title="jquery-mobile学习">http://summerface.github.io/2015/11/27/jquery-mobile学习/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://summerface.github.io/2015/11/27/jquery-mobile学习/　　作者: 纪晔" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/11/30/jquery-mobile-content-widgets/">
-                    jquery-mobile content&amp;widgets
-                </a>
-            </div>
-        
-        
-    </nav>
 
   
 </article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery-mobile学习笔记"><span class="toc-number">1.</span> <span class="toc-text">jquery-mobile学习笔记</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
-
-
 
 
     <div class="share">
@@ -369,44 +387,6 @@
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2015/11/30/jquery-mobile-content-widgets/" title="上一篇: jquery-mobile content&amp;widgets">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/webpack-学习/">webpack 学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/css-hack/">css hack</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/03/React-js总结点/">React.js总结点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/30/jquery-mobile-content-widgets/">jquery-mobile content&widgets</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/27/jquery-mobile学习/">jquery-mobile学习</a></li></ul>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
-            }
-        })
-    </script>
 
 
 
