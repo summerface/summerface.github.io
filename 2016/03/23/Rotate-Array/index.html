@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jquery-mobile学习 | 纪晔</title>
+  <title>Rotate Array | 纪晔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jquery-mobile学习笔记
-加载页面&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。
-对话框&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;">
+  <meta name="description" content="第一种方法123456789101112class Solution &amp;#123;public:    void rotate(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) &amp;#123;       int len = nums.size();       while(k&amp;gt;0)&amp;#123;           int temp = nums[len-1];">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery-mobile学习">
-<meta property="og:url" content="http://summerface.github.io/2015/11/27/jquery-mobile学习/index.html">
+<meta property="og:title" content="Rotate Array">
+<meta property="og:url" content="http://summerface.github.io/2016/03/23/Rotate-Array/index.html">
 <meta property="og:site_name" content="纪晔">
-<meta property="og:description" content="jquery-mobile学习笔记
-加载页面&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。
-对话框&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;">
-<meta property="og:updated_time" content="2015-11-27T03:28:32.000Z">
+<meta property="og:description" content="第一种方法123456789101112class Solution &amp;#123;public:    void rotate(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) &amp;#123;       int len = nums.size();       while(k&amp;gt;0)&amp;#123;           int temp = nums[len-1];">
+<meta property="og:updated_time" content="2016-03-23T06:29:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery-mobile学习">
-<meta name="twitter:description" content="jquery-mobile学习笔记
-加载页面&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。
-对话框&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;">
+<meta name="twitter:title" content="Rotate Array">
+<meta name="twitter:description" content="第一种方法123456789101112class Solution &amp;#123;public:    void rotate(vector&amp;lt;int&amp;gt;&amp;amp; nums, int k) &amp;#123;       int len = nums.size();       while(k&amp;gt;0)&amp;#123;           int temp = nums[len-1];">
   
     <link rel="alternative" href="/atom.xml" title="纪晔" type="application/atom+xml">
   
@@ -224,11 +218,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-jquery-mobile学习" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Rotate-Array" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/27/jquery-mobile学习/" class="article-date">
-      <time datetime="2015-11-27T02:34:07.000Z" itemprop="datePublished">2015-11-27</time>
+      <a href="/2016/03/23/Rotate-Array/" class="article-date">
+      <time datetime="2016-03-23T06:02:04.000Z" itemprop="datePublished">2016-03-23</time>
 </a>
     </div>
   
@@ -241,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jquery-mobile学习
+      Rotate Array
     </h1>
   
 
@@ -258,13 +252,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="jquery-mobile学习笔记">jquery-mobile学习笔记</h2><ol>
-<li>加载页面<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。</li>
-<li>对话框<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在指向页面链接元素中添加”data-rel”属性为”dialog”，则单击该链接的时候，打开的页面将以一个对话框的形式展示在浏览器中。单击对话框任意链接，对话框自动关闭，并以回退形式至上一页面。也可以在对话框中创建取消按钮，通过设置元素属性或编写js代码关闭对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在对话框添加链接按钮”data-rel”=”back”可关闭对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或者js代码 $(“.ui-dialog”).dialog(“close”);</li>
-<li>工具栏与格式化内容<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”data-add-back-btn”=”back”设置为回退按钮<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”data-back-btn－text”=”<em>*</em>“设置回退按钮的文字为＊＊＊</li>
-<li>“page”容器元素的“data-add-back-btn”为true时表示切换到该容器，头部栏显示默认的回退按钮。或者$.mobile.page.prototype.options.backBtnText=”<em>*</em>“<br>data-icon=”arrow-l”  “arrow-r” 分别显示左右按钮图标.<br>设定按钮位置 添加类别属性 class=”ui-btn-left” “ui-btn-right”.</li>
-<li>导航栏<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将div标签的data-role设置为navbar便会产生一个导航栏容器，在该容器内，将ul元素设置导航栏的各子类导航按钮，每一行最多可以设置5个按钮，超出个数的按钮自动显示在下一行，另外，导航栏中的按钮可以引用系统图标，也可以自定义图标。<br>class=”ui-btn-active”设置导航按钮为选中状态。</li>
-</ol>
+        <h1 id="第一种方法">第一种方法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> len = nums.size();</span><br><span class="line">       <span class="keyword">while</span>(k&gt;<span class="number">0</span>)&#123;</span><br><span class="line">           <span class="keyword">int</span> temp = nums[len-<span class="number">1</span>];</span><br><span class="line">           nums.pop_back();</span><br><span class="line">           nums.insert(nums.begin(),temp);</span><br><span class="line">           k--;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>c++ vector方法：</p>
+<ul>
+<li>insert(loc,val) 其中loc是一个迭代器，并不是当前元素下标。</li>
+<li>pop_back() push_back()</li>
+<li>erase(loc)</li>
+<li>clear() 清空vector</li>
+<li>empty() 返回true或者false</li>
+<li>back() front() 返回迭代器</li>
+<li>resize(size,val)</li>
+<li>swap(vector &amp;from) 交换当前vector和from的元素</li>
+<li>front() 传回第一个数据</li>
+<li>rbegin() 传回逆向数列的第一个值。</li>
+</ul>
+<h1 id="第二种方法">第二种方法</h1><p>先将5以前的数据翻转得到的数组是[4,3,2,1,5,6,7]<br>再将5及以后的数据翻转得到的数组是[4,3,2,1,7,6,5]<br>再将整个数组翻转即得到[5,6,7,1,2,3,4]. （即为所求）<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> len = nums.size();</span><br><span class="line">      k = k%len;</span><br><span class="line">      <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      reversal(nums,<span class="number">0</span>,len-k-<span class="number">1</span>);</span><br><span class="line">      reversal(nums,len-k,len-<span class="number">1</span>);</span><br><span class="line">      reversal(nums,<span class="number">0</span>,len-<span class="number">1</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reversal</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(start&lt;end)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = nums[start];</span><br><span class="line">            nums[start] = nums[end];</span><br><span class="line">            nums[end] = temp;</span><br><span class="line">            start ++;</span><br><span class="line">            end --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -273,13 +275,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/11/27/jquery-mobile学习/">jquery-mobile学习</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/23/Rotate-Array/">Rotate Array</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 纪晔 的个人博客">纪晔</a></p>
-        <p><span>发布时间:</span>2015年11月27日 - 10时34分</p>
-        <p><span>最后更新:</span>2015年11月27日 - 11时28分</p>
+        <p><span>发布时间:</span>2016年03月23日 - 14时02分</p>
+        <p><span>最后更新:</span>2016年03月23日 - 14时29分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/11/27/jquery-mobile学习/" title="jquery-mobile学习">http://summerface.github.io/2015/11/27/jquery-mobile学习/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://summerface.github.io/2015/11/27/jquery-mobile学习/　　作者: 纪晔" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/23/Rotate-Array/" title="Rotate Array">http://summerface.github.io/2016/03/23/Rotate-Array/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://summerface.github.io/2016/03/23/Rotate-Array/　　作者: 纪晔" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -293,11 +295,17 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/11/30/jquery-mobile-content-widgets/">
-                    jquery-mobile content&amp;widgets
+                <a href="/2016/03/23/Pascal-s-Triangle/">
+                     Pascal&#39;s Triangle
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/11/Product-of-Array-Except-Self/">
+                    Product of Array Except Self
+                </a>
+            </div>
         
     </nav>
 
@@ -306,7 +314,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery-mobile学习笔记"><span class="toc-number">1.</span> <span class="toc-text">jquery-mobile学习笔记</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一种方法"><span class="toc-number">1.</span> <span class="toc-text">第一种方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二种方法"><span class="toc-number">2.</span> <span class="toc-text">第二种方法</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -374,7 +382,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/11/30/jquery-mobile-content-widgets/" title="上一篇: jquery-mobile content&amp;widgets">
+            <a href="/2016/03/23/Pascal-s-Triangle/" title="上一篇:  Pascal&#39;s Triangle">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -382,7 +390,9 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/03/11/Product-of-Array-Except-Self/" title="下一篇: Product of Array Except Self">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript创建对象和继承 | 纪晔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="理解对象 对象属性包括数据属性和访问器属性 
+数据属性
+configurable 表示能否通过delete删除属性从而重新定义属性。默认为true
+enumerable 能否通过for in循环返回属性。默认为true
+writable 能否修改属性的值  默认为true
+value 包含这个属性的数据值  默认为undefined要修改属性默认的特性，必须使用object.definePrope">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript创建对象和继承">
+<meta property="og:url" content="http://summerface.github.io/2016/03/08/javascript创建对象和继承/index.html">
+<meta property="og:site_name" content="纪晔">
+<meta property="og:description" content="理解对象 对象属性包括数据属性和访问器属性 
+数据属性
+configurable 表示能否通过delete删除属性从而重新定义属性。默认为true
+enumerable 能否通过for in循环返回属性。默认为true
+writable 能否修改属性的值  默认为true
+value 包含这个属性的数据值  默认为undefined要修改属性默认的特性，必须使用object.definePrope">
+<meta property="og:updated_time" content="2016-03-08T12:21:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript创建对象和继承">
+<meta name="twitter:description" content="理解对象 对象属性包括数据属性和访问器属性 
+数据属性
+configurable 表示能否通过delete删除属性从而重新定义属性。默认为true
+enumerable 能否通过for in循环返回属性。默认为true
+writable 能否修改属性的值  默认为true
+value 包含这个属性的数据值  默认为undefined要修改属性默认的特性，必须使用object.definePrope">
+  
+    <link rel="alternative" href="/atom.xml" title="纪晔" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">纪晔</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">纪晔</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">纪晔</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-javascript创建对象和继承" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/08/javascript创建对象和继承/" class="article-date">
+      <time datetime="2016-03-08T08:27:47.000Z" itemprop="datePublished">2016-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript创建对象和继承
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="理解对象">理解对象</h1><p><strong> 对象属性包括数据属性和访问器属性 </strong></p>
+<h2 id="数据属性">数据属性</h2><ul>
+<li>configurable 表示能否通过delete删除属性从而重新定义属性。默认为true</li>
+<li>enumerable 能否通过for in循环返回属性。默认为true</li>
+<li>writable 能否修改属性的值  默认为true</li>
+<li>value 包含这个属性的数据值  默认为undefined<br>要修改属性默认的特性，必须使用object.defineProperty()，接受三个参数：属性所在的对象，属性名称，一个描述符对象（如{writable:false,enumerable:false}）<br>defineProperty()方法修改同一个属性是可以的，但是当confugurable设置为false之后，就有限制了。<h2 id="访问器属性">访问器属性</h2><strong>  访问器属性不包含数据值，他们包含一对getter，setter函数。 </strong></li>
+<li>configurable</li>
+<li>enumerable</li>
+<li>Get 在读取属性时调用的函数。默认值undefined</li>
+<li>Set 在写入属性时调用的函数。默认值undefined</li>
+</ul>
+<h2 id="为对象定义多个属性">为对象定义多个属性</h2><p>defineProperties()，接受两个对象参数，第一个是要添加和修改其属性的对象，第二个是与第一个对象中属性一一对应的对象。</p>
+<h2 id="读取属性的特性">读取属性的特性</h2><p>Object.getOwnPropertyDescriptor()，接受两个参数，属性所在的对象和要读取描述符的属性名称。</p>
+<h1 id="创建对象">创建对象</h1><h2 id="工厂模式">工厂模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	o.name=name;</span><br><span class="line">	o.age=age;</span><br><span class="line">	o.job=job;</span><br><span class="line">	o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person=createPerson(<span class="string">"vera"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</span><br></pre></td></tr></table></figure>
+<p>可以无限次的调用这个函数，工厂模式虽解决了创建多个相似对象的问题，但没有解决对象识别的问题。</p>
+<h2 id="构造函数模式">构造函数模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.job = job;</span><br><span class="line">	<span class="keyword">this</span>.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">"vera"</span>,<span class="number">28</span>,<span class="string">"teacher"</span>);</span><br></pre></td></tr></table></figure>
+<p>按照惯例，构造函数始终都应该以一个大写字母开头，非构造函数则以小写字母开头。<br>构造函数模式创建对象的步骤</p>
+<ul>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象</li>
+<li>执行构造函数代码</li>
+<li>返回新对象<br>创建的新对象保存着不同构造函数的实例，新对象都有一个constructor属性。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(person.constructor == Person);   <span class="comment">//true</span></span><br><span class="line">alert(person <span class="keyword">instanceof</span> object);       <span class="comment">//true</span></span><br><span class="line">alert(person <span class="keyword">instanceof</span> Person);       <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>构造函数与其他函数的区别在于调用他们的方式不同。任何函数只要通过new操作符来调用，就可以作为构造函数。<br>在另外一个函数中调用如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">Person.call(a,<span class="string">"vera"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</span><br><span class="line">o.sayName();     <span class="comment">//vera</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 以这种方创建函数，会导致不同的作用域链和标志符解析，不同实例上的同名函数是不相等的。 </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(person1.sayName == person2.sayName)   <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="原型模式">原型模式</h2><p>我们创建的每一个函数都有一个prototype属性（原型属性），<strong> 这个属性是一个指针,指向一个对象，这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。使用原型对象的好吃是可以让所有对象实例共享他所包含的属性和方法。 </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.name=<span class="string">"vera"</span>;</span><br><span class="line">Person.prototype.age = <span class="number">25</span>;</span><br><span class="line">Person.prototype.job=<span class="string">"teacher"</span>;</span><br><span class="line">Person.prototype.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">alert(person1.sayName == person2.sayName)   <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>原型对象方法isPrototypeOf()，可以检验对象里是否有指向本原型对象的指针<br>Object.getPrototypeOf(),返回Prototype的值。<br><strong> 使用delete操作符可以完全删除实例属性，从而让我们能够重新访问原型中的属性。hasOwnProperty()可以检测一个属性是存在实例中还是原型中。来自实例为true，来自原型为false 。in操作符可以检查对象是否包含属性，无论在实例还是在原型中。 </strong><br><strong> 要取得所有对象上可枚举的实例属性，用Object.keys()方法，例如Object.keys(Person.prototype) </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">	name:<span class="string">"vera"</span>,</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line">此时constructor属性不再指向Person，因为没创建一个函数，就会同时创建prototype对象，这个对象也会自动获得constructor属性，上面代码中本质上重写了默认的prototype对象，所以constructor属性也变成了新对象的constructor属性，即指向object。</span><br></pre></td></tr></table></figure></p>
+<h2 id="组合使用构造函数模型和原型模式">组合使用构造函数模型和原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name=name;</span><br><span class="line">	<span class="keyword">this</span>.age=age;</span><br><span class="line">	<span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">	constructor:Person,</span><br><span class="line">	sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 构造函数模式和原型模式是当前最广泛使用认同度最高的方法。 </strong></p>
+<h2 id="动态原型模式">动态原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name=name;</span><br><span class="line">	<span class="keyword">this</span>.age=age;</span><br><span class="line">	<span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>)&#123;</span><br><span class="line">	Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="寄生构造函数模式">寄生构造函数模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	o.name = name;</span><br><span class="line">	o.age = age;</span><br><span class="line">	o.job = job;</span><br><span class="line">	o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> friend = <span class="keyword">new</span> Person(<span class="string">"vera"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong> 不能依赖instanceof确定对象类型。 </strong></p>
+<h2 id="稳妥构造函数模型">稳妥构造函数模型</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	<span class="comment">//在此定义私有变量和成员函数</span></span><br><span class="line">	o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="继承">继承</h1><p><strong> ECMAScript只支持实现继承，不支持接口继承 </strong></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/08/javascript创建对象和继承/">javascript创建对象和继承</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 纪晔 的个人博客">纪晔</a></p>
+        <p><span>发布时间:</span>2016年03月08日 - 16时27分</p>
+        <p><span>最后更新:</span>2016年03月08日 - 20时21分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/08/javascript创建对象和继承/" title="javascript创建对象和继承">http://summerface.github.io/2016/03/08/javascript创建对象和继承/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://summerface.github.io/2016/03/08/javascript创建对象和继承/　　作者: 纪晔" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/10/反转链表/">
+                    反转链表
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/06/html严格模式与混杂模式/">
+                    html严格模式与混杂模式
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#理解对象"><span class="toc-number">1.</span> <span class="toc-text">理解对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据属性"><span class="toc-number">1.1.</span> <span class="toc-text">数据属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问器属性"><span class="toc-number">1.2.</span> <span class="toc-text">访问器属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为对象定义多个属性"><span class="toc-number">1.3.</span> <span class="toc-text">为对象定义多个属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#读取属性的特性"><span class="toc-number">1.4.</span> <span class="toc-text">读取属性的特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建对象"><span class="toc-number">2.</span> <span class="toc-text">创建对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#工厂模式"><span class="toc-number">2.1.</span> <span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造函数模式"><span class="toc-number">2.2.</span> <span class="toc-text">构造函数模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型模式"><span class="toc-number">2.3.</span> <span class="toc-text">原型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合使用构造函数模型和原型模式"><span class="toc-number">2.4.</span> <span class="toc-text">组合使用构造函数模型和原型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态原型模式"><span class="toc-number">2.5.</span> <span class="toc-text">动态原型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#寄生构造函数模式"><span class="toc-number">2.6.</span> <span class="toc-text">寄生构造函数模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#稳妥构造函数模型"><span class="toc-number">2.7.</span> <span class="toc-text">稳妥构造函数模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承"><span class="toc-number">3.</span> <span class="toc-text">继承</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/03/10/反转链表/" title="上一篇: 反转链表">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/03/06/html严格模式与混杂模式/" title="下一篇: html严格模式与混杂模式">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/Pascal-s-Triangle/"> Pascal's Triangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/Rotate-Array/">Rotate Array</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/Product-of-Array-Except-Self/">Product of Array Except Self</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/阶乘中0的个数/">阶乘中0的个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/二叉树的最大深度/">二叉树的最大深度</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/反转链表/">反转链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/javascript创建对象和继承/">javascript创建对象和继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/html严格模式与混杂模式/">html严格模式与混杂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/css浮动与定位详细/">css浮动与定位详细</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/webpack-学习/">webpack 学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/css-hack/">css hack</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/03/React-js总结点/">React.js总结点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/30/jquery-mobile-content-widgets/">jquery-mobile content&widgets</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/27/jquery-mobile学习/">jquery-mobile学习</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 纪晔
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

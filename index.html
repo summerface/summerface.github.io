@@ -222,6 +222,434 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Pascal-s-Triangle" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/23/Pascal-s-Triangle/" class="article-date">
+      <time datetime="2016-03-23T07:13:09.000Z" itemprop="datePublished">2016-03-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/23/Pascal-s-Triangle/"> Pascal&#39;s Triangle</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; arr(numRows);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;numRows;i++)&#123;</span><br><span class="line">            arr[i].resize(i+<span class="number">1</span>);</span><br><span class="line">            arr[i][<span class="number">0</span>]= arr[i][i]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> m = <span class="number">1</span>;m&lt;i;m++)&#123;</span><br><span class="line">                arr[i][m] = arr[i-<span class="number">1</span>][m-<span class="number">1</span>]+arr[i-<span class="number">1</span>][m];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意点：vector创建二维数组的时候， vector <vector<int>&gt; arr(numRows); arr后面一定要加上长度，用小括号扩起。</vector<int></li>
+</ul>
+<h1 id="Pascal’s_Triangle_II">Pascal’s Triangle II</h1><ul>
+<li>递归法会超时，所以考虑其他方法。从后往前遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; getRow(<span class="keyword">int</span> rowIndex) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr;</span><br><span class="line">        arr.resize(rowIndex+<span class="number">1</span>);</span><br><span class="line">        arr[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> arr ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;rowIndex;i++)&#123;</span><br><span class="line">            arr[rowIndex]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = rowIndex-<span class="number">1</span>; k &gt; <span class="number">0</span>; --k)&#123;</span><br><span class="line">                arr[k] = arr[k] + arr[k-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            arr[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Rotate-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/23/Rotate-Array/" class="article-date">
+      <time datetime="2016-03-23T06:02:04.000Z" itemprop="datePublished">2016-03-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/23/Rotate-Array/">Rotate Array</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第一种方法">第一种方法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> len = nums.size();</span><br><span class="line">       <span class="keyword">while</span>(k&gt;<span class="number">0</span>)&#123;</span><br><span class="line">           <span class="keyword">int</span> temp = nums[len-<span class="number">1</span>];</span><br><span class="line">           nums.pop_back();</span><br><span class="line">           nums.insert(nums.begin(),temp);</span><br><span class="line">           k--;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>c++ vector方法：</p>
+<ul>
+<li>insert(loc,val) 其中loc是一个迭代器，并不是当前元素下标。</li>
+<li>pop_back() push_back()</li>
+<li>erase(loc)</li>
+<li>clear() 清空vector</li>
+<li>empty() 返回true或者false</li>
+<li>back() front() 返回迭代器</li>
+<li>resize(size,val)</li>
+<li>swap(vector &amp;from) 交换当前vector和from的元素</li>
+<li>front() 传回第一个数据</li>
+<li>rbegin() 传回逆向数列的第一个值。</li>
+</ul>
+<h1 id="第二种方法">第二种方法</h1><p>先将5以前的数据翻转得到的数组是[4,3,2,1,5,6,7]<br>再将5及以后的数据翻转得到的数组是[4,3,2,1,7,6,5]<br>再将整个数组翻转即得到[5,6,7,1,2,3,4]. （即为所求）<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> len = nums.size();</span><br><span class="line">      k = k%len;</span><br><span class="line">      <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      reversal(nums,<span class="number">0</span>,len-k-<span class="number">1</span>);</span><br><span class="line">      reversal(nums,len-k,len-<span class="number">1</span>);</span><br><span class="line">      reversal(nums,<span class="number">0</span>,len-<span class="number">1</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reversal</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(start&lt;end)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = nums[start];</span><br><span class="line">            nums[start] = nums[end];</span><br><span class="line">            nums[end] = temp;</span><br><span class="line">            start ++;</span><br><span class="line">            end --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Product-of-Array-Except-Self" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/11/Product-of-Array-Except-Self/" class="article-date">
+      <time datetime="2016-03-11T09:08:58.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/Product-of-Array-Except-Self/">Product of Array Except Self</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 已知一个数组，返回一个数组，要求数组的每个值为原数组中出去当前位置元素的所有元素之积 </strong></p>
+<h6 id="我的方法">我的方法</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> productExceptSelf = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> total = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">       <span class="keyword">if</span>(nums[i] == <span class="number">0</span>)&#123;</span><br><span class="line">           arr.push(i);</span><br><span class="line">           <span class="keyword">continue</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           total = total * nums[i];</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  <span class="keyword">if</span>(arr.length == <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">          nums[i] = total / nums[i];</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(arr.length == <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(nums[i]==<span class="number">0</span>)&#123;</span><br><span class="line">              nums[i] =total;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              nums[i] = <span class="number">0</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span> ;i&lt;nums.length;i++)&#123;</span><br><span class="line">          nums[i] = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> nums;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h6 id="更好的方法">更好的方法</h6><p>比较好的解决方法是构造两个数组相乘：</p>
+<p>[1, a1, a1<em>a2, a1</em>a2<em>a3]<br>[a2</em>a3<em>a4, a3</em>a4, a4, 1]<br>正着遍历和反着遍历，两个数组分别存储当前位置元素之前元素之积，当前元素之后的元素之积<br>最后将对应位置相乘。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-阶乘中0的个数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/11/阶乘中0的个数/" class="article-date">
+      <time datetime="2016-03-11T07:07:28.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/阶乘中0的个数/">阶乘中0的个数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h6 id="数学题，只有2和5相乘才会出现0，其中整十也可以看做是2和5相乘的结果，所以，可以在n之前看看有多少个2以及多少个5就行了，又发现2的数量一定多于5的个数，于是我们只看n前面有多少个5就行了，于是n/5就得到了5的个数，还有一点要注意的就是25这种，5和5相乘的结果，所以，还要看n/5里面有多少个5，也就相当于看n里面有多少个25，还有125，625。">数学题，只有2和5相乘才会出现0，其中整十也可以看做是2和5相乘的结果，所以，可以在n之前看看有多少个2以及多少个5就行了，又发现2的数量一定多于5的个数，于是我们只看n前面有多少个5就行了，于是n/5就得到了5的个数，还有一点要注意的就是25这种，5和5相乘的结果，所以，还要看n/5里面有多少个5，也就相当于看n里面有多少个25，还有125，625。</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> trailingZeroes = <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">5</span>; i&lt;=n; i=i*<span class="number">5</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        result += <span class="built_in">parseInt</span>(n/i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-二叉树的最大深度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/11/二叉树的最大深度/" class="article-date">
+      <time datetime="2016-03-11T03:20:38.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/二叉树的最大深度/">二叉树的最大深度</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="递归法">递归法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.max((maxDepth(root.left)+<span class="number">1</span>),(maxDepth(root.right)+<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="迭代法">迭代法</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/反转链表/" class="article-date">
+      <time datetime="2016-03-10T08:53:01.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/反转链表/">反转链表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="迭代方法">迭代方法</h1><p><strong> 每次反转两个，prev和当前head，翻转后，head之前最初head的下一个，prev变为最初的head </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">var</span> reverseList = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head)&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> prev = <span class="literal">null</span>;</span><br><span class="line">   <span class="keyword">while</span>(head!=<span class="literal">null</span>)&#123;</span><br><span class="line">      <span class="keyword">var</span> next = head.next;</span><br><span class="line">      head.next = prev;</span><br><span class="line">      prev = head;</span><br><span class="line">      head = next;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> prev;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="递归方法">递归方法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseList = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head)&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">if</span>(head.next)&#123;</span><br><span class="line">       <span class="keyword">var</span> temp =reverseList(head.next); </span><br><span class="line">       head.next.next=head;</span><br><span class="line">       head.next = <span class="literal">null</span>;</span><br><span class="line">       <span class="keyword">return</span> temp;</span><br><span class="line">      </span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> head;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript创建对象和继承" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/08/javascript创建对象和继承/" class="article-date">
+      <time datetime="2016-03-08T08:27:47.000Z" itemprop="datePublished">2016-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/08/javascript创建对象和继承/">javascript创建对象和继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="理解对象">理解对象</h1><p><strong> 对象属性包括数据属性和访问器属性 </strong></p>
+<h2 id="数据属性">数据属性</h2><ul>
+<li>configurable 表示能否通过delete删除属性从而重新定义属性。默认为true</li>
+<li>enumerable 能否通过for in循环返回属性。默认为true</li>
+<li>writable 能否修改属性的值  默认为true</li>
+<li>value 包含这个属性的数据值  默认为undefined<br>要修改属性默认的特性，必须使用object.defineProperty()，接受三个参数：属性所在的对象，属性名称，一个描述符对象（如{writable:false,enumerable:false}）<br>defineProperty()方法修改同一个属性是可以的，但是当confugurable设置为false之后，就有限制了。<h2 id="访问器属性">访问器属性</h2><strong>  访问器属性不包含数据值，他们包含一对getter，setter函数。 </strong></li>
+<li>configurable</li>
+<li>enumerable</li>
+<li>Get 在读取属性时调用的函数。默认值undefined</li>
+<li>Set 在写入属性时调用的函数。默认值undefined</li>
+</ul>
+<h2 id="为对象定义多个属性">为对象定义多个属性</h2><p>defineProperties()，接受两个对象参数，第一个是要添加和修改其属性的对象，第二个是与第一个对象中属性一一对应的对象。</p>
+<h2 id="读取属性的特性">读取属性的特性</h2><p>Object.getOwnPropertyDescriptor()，接受两个参数，属性所在的对象和要读取描述符的属性名称。</p>
+<h1 id="创建对象">创建对象</h1><h2 id="工厂模式">工厂模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	o.name=name;</span><br><span class="line">	o.age=age;</span><br><span class="line">	o.job=job;</span><br><span class="line">	o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person=createPerson(<span class="string">"vera"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</span><br></pre></td></tr></table></figure>
+<p>可以无限次的调用这个函数，工厂模式虽解决了创建多个相似对象的问题，但没有解决对象识别的问题。</p>
+<h2 id="构造函数模式">构造函数模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.job = job;</span><br><span class="line">	<span class="keyword">this</span>.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">"vera"</span>,<span class="number">28</span>,<span class="string">"teacher"</span>);</span><br></pre></td></tr></table></figure>
+<p>按照惯例，构造函数始终都应该以一个大写字母开头，非构造函数则以小写字母开头。<br>构造函数模式创建对象的步骤</p>
+<ul>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象</li>
+<li>执行构造函数代码</li>
+<li>返回新对象<br>创建的新对象保存着不同构造函数的实例，新对象都有一个constructor属性。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(person.constructor == Person);   <span class="comment">//true</span></span><br><span class="line">alert(person <span class="keyword">instanceof</span> object);       <span class="comment">//true</span></span><br><span class="line">alert(person <span class="keyword">instanceof</span> Person);       <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>构造函数与其他函数的区别在于调用他们的方式不同。任何函数只要通过new操作符来调用，就可以作为构造函数。<br>在另外一个函数中调用如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">Person.call(a,<span class="string">"vera"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</span><br><span class="line">o.sayName();     <span class="comment">//vera</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 以这种方创建函数，会导致不同的作用域链和标志符解析，不同实例上的同名函数是不相等的。 </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(person1.sayName == person2.sayName)   <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="原型模式">原型模式</h2><p>我们创建的每一个函数都有一个prototype属性（原型属性），<strong> 这个属性是一个指针,指向一个对象，这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。使用原型对象的好吃是可以让所有对象实例共享他所包含的属性和方法。 </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.name=<span class="string">"vera"</span>;</span><br><span class="line">Person.prototype.age = <span class="number">25</span>;</span><br><span class="line">Person.prototype.job=<span class="string">"teacher"</span>;</span><br><span class="line">Person.prototype.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">alert(person1.sayName == person2.sayName)   <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>原型对象方法isPrototypeOf()，可以检验对象里是否有指向本原型对象的指针<br>Object.getPrototypeOf(),返回Prototype的值。<br><strong> 使用delete操作符可以完全删除实例属性，从而让我们能够重新访问原型中的属性。hasOwnProperty()可以检测一个属性是存在实例中还是原型中。来自实例为true，来自原型为false 。in操作符可以检查对象是否包含属性，无论在实例还是在原型中。 </strong><br><strong> 要取得所有对象上可枚举的实例属性，用Object.keys()方法，例如Object.keys(Person.prototype) </strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">	name:<span class="string">"vera"</span>,</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line">此时constructor属性不再指向Person，因为没创建一个函数，就会同时创建prototype对象，这个对象也会自动获得constructor属性，上面代码中本质上重写了默认的prototype对象，所以constructor属性也变成了新对象的constructor属性，即指向object。</span><br></pre></td></tr></table></figure></p>
+<h2 id="组合使用构造函数模型和原型模式">组合使用构造函数模型和原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name=name;</span><br><span class="line">	<span class="keyword">this</span>.age=age;</span><br><span class="line">	<span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">	constructor:Person,</span><br><span class="line">	sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 构造函数模式和原型模式是当前最广泛使用认同度最高的方法。 </strong></p>
+<h2 id="动态原型模式">动态原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name=name;</span><br><span class="line">	<span class="keyword">this</span>.age=age;</span><br><span class="line">	<span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>)&#123;</span><br><span class="line">	Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="寄生构造函数模式">寄生构造函数模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	o.name = name;</span><br><span class="line">	o.age = age;</span><br><span class="line">	o.job = job;</span><br><span class="line">	o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> friend = <span class="keyword">new</span> Person(<span class="string">"vera"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong> 不能依赖instanceof确定对象类型。 </strong></p>
+<h2 id="稳妥构造函数模型">稳妥构造函数模型</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	<span class="comment">//在此定义私有变量和成员函数</span></span><br><span class="line">	o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="继承">继承</h1><p><strong> ECMAScript只支持实现继承，不支持接口继承 </strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-html严格模式与混杂模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -460,288 +888,10 @@
 
 
   
-    <article id="post-css-hack" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/03/04/css-hack/" class="article-date">
-      <time datetime="2016-03-04T03:09:03.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/css-hack/">css hack</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><strong>CSS hack由于不同厂商的浏览器，比如Internet Explorer,Safari,Mozilla Firefox,Chrome等，或者是同一厂商的浏览器的不同版本，如IE6和IE7，对CSS的解析认识不完全一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。 这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。 </strong></p>
-<h5 id="css_hack分类">css hack分类</h5><p>CSS属性前缀法、选择器前缀法以及IE条件注释法，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。 - </p>
-<ul>
-<li>属性前缀法(即类内部Hack):例如 IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号” </em> “，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识。</li>
-<li>选择器前缀法(即选择器Hack)：例如 IE6能识别<em>html .class{}，IE7能识别</em>+html .class{}或者*:first-child+html .class{}。</li>
-<li>IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： <!--[if IE]>IE浏览器显示的内容 <![endif]-->，针对IE6及以下版本： <!--[if lt IE 6]>只在IE6-显示的内容 <![endif]-->。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</li>
-</ul>
-<h5 id="CSS_hack方式一：条件注释法">CSS hack方式一：条件注释法</h5><p>这种方式是IE浏览器专有的Hack方式，微软官方推荐使用的hack方式。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">只在IE6下生效</span><br><span class="line"><span class="comment">&lt;!--[if IE 6]&gt;</span><br><span class="line">这段文字只在IE6浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line">只在IE6以上版本生效</span><br><span class="line"><span class="comment">&lt;!--[if gte IE 6]&gt;</span><br><span class="line">这段文字只在IE6以上(包括)版本IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line">只在IE8上不生效</span><br><span class="line"><span class="comment">&lt;!--[if ! IE 8]&gt;</span><br><span class="line">这段文字在非IE8浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span></span><br><span class="line">非IE浏览器生效</span><br><span class="line"><span class="comment">&lt;!--[if !IE]&gt;</span><br><span class="line">这段文字只在非IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="CSS_hack方式二：类内属性前缀法">CSS hack方式二：类内属性前缀法</h5><p><strong> 属性前缀法是在CSS样式属性名前加上一些只有特定浏览器才能识别的hack前缀，以达到预期的页面展现效果。 </strong><br>说明：在标准模式中</p>
-<ul>
-<li>“-″减号是IE6专有的hack</li>
-<li>“\9″ IE6/IE7/IE8/IE9/IE10都生效</li>
-<li>“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</li>
-<li>“\9\0″ 只对IE9/IE10生效，是IE9/10的hack<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.hack&#123;  </span><br><span class="line">/*demo1 */  </span><br><span class="line">/*demo1 注意顺序，否则IE6/7下可能无法正确显示，导致结果显示为白色背景*/  </span><br><span class="line">    background-color:red; /* All browsers */  </span><br><span class="line">    background-color:blue !important;/* All browsers but IE6 */  </span><br><span class="line">    *background-color:black; /* IE6, IE7 */  </span><br><span class="line">    +background-color:yellow;/* IE6, IE7*/  </span><br><span class="line">    background-color:gray\9; /* IE6, IE7, IE8, IE9, IE10 */  </span><br><span class="line">    background-color:purple\0; /* IE8, IE9, IE10 */  </span><br><span class="line">    background-color:orange\9\0;/*IE9, IE10*/  </span><br><span class="line">    _background-color:green; /* Only works in IE6 */  </span><br><span class="line">    *+background-color:pink; /*  WARNING: Only works in IE7 ? Is it right? */  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="CSS_hack方式三：选择器前缀法">CSS hack方式三：选择器前缀法</h5><p><strong> 选择器前缀法是针对一些页面表现不一致或者需要特殊对待的浏览器，在CSS选择器前加上一些只有某些特定浏览器才能识别的前缀进行hack。 </strong><br>目前最常见的是</p>
-<p><em>html </em>前缀只对IE6生效<br><em>+html </em>+前缀只对IE7生效<br>@media screen\9{…}只对IE6/7生效<br>@media \0screen {body { background: red; }}只对IE8有效<br>@media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效<br>@media screen\0 {body { background: green; }} 只对IE8/9/10有效<br>@media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效<br>@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效<br>等等</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-React-js总结点" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/03/React-js总结点/" class="article-date">
-      <time datetime="2015-12-03T02:48:45.000Z" itemprop="datePublished">2015-12-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/03/React-js总结点/">React.js总结点</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="React知识点">React知识点</h3><p><strong> 虚拟DOM：它直接用JavaScript实现了DOM树（大致上）。组件的HTML结构并不会直接生成DOM，而是映射生成虚拟的JavaScript DOM结构，React又通过在这个虚拟DOM上实现了一个 diff 算法找出最小变更，再把这些变更写入实际的DOM中。这个虚拟DOM以JS结构的形式存在，计算性能会比较好，而且由于减少了实际DOM操作次数，性能会有较大提升。 </strong></p>
-<h5 id="1-_暴露接口">1. 暴露接口</h5><p>如果想在父组件中调用子组件的接口，首先要在子组件设置ref属性标注，然后在父组件里调用。</p>
-<p>比如：<br>首先在ButtonComponent上设置一个ref=””属性来标记一下，比如这里把子组件设置成<buttoncomponent ref="getSwordButton">，那么在父组件的逻辑里，就可以在父组件自己的方法中通过这种方式来调用接口方法：</buttoncomponent></p>
-<p>全选复制放进笔记this.refs.getSwordButton.getDragonKillingSword();</p>
-<h5 id="2-_子组件调用父组件方法">2. 子组件调用父组件方法</h5><p>父组件可以直接将需要执行的函数传递给子组件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ButtonComponent clickCallback=&#123;<span class="keyword">this</span>.getSwordButtonClickCallback&#125;/&gt;</span><br></pre></td></tr></table></figure></p>
-<p>然后在子组件中调用父组件方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ButtonComponent = React.createClass(&#123;</span><br><span class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">onClick</span>=<span class="value">&#123;this.props.clickCallback&#125;</span>&gt;</span>屠龙宝刀，点击就送<span class="tag">&lt;/<span class="title">button</span>&gt;</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>子组件通过this.props能够获取在父组件创建子组件时传入的任何参数，因此this.props也常被当做配置参数来使用</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-jquery-mobile-content-widgets" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/30/jquery-mobile-content-widgets/" class="article-date">
-      <time datetime="2015-11-30T05:45:13.000Z" itemprop="datePublished">2015-11-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/30/jquery-mobile-content-widgets/">jquery-mobile content&amp;widgets</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="jquery_mobile包含的touch组件包括：">jquery mobile包含的touch组件包括：</h3><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;form elements, collapsibles, collapsible sets (accordions), popups, dialogs, responsive tables等。</p>
-<h4 id="1-_listviews">1. listviews</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;data-role=”listview”   data-inset=”true”  data-filter=”true” data-type=”search”</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"filter-for-listview"</span> <span class="attribute">data-type</span>=<span class="value">"search"</span> <span class="attribute">placeholder</span>=<span class="value">"Type to search..."</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">data-role</span>=<span class="value">"listview"</span> <span class="attribute">data-inset</span>=<span class="value">"true"</span> <span class="attribute">data-filter</span>=<span class="value">"true"</span> <span class="attribute">data-input</span>=<span class="value">"#filter-for-listview"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Acura<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Audi<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>BMW<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Cadillac<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>Ferrari<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-_formElements">2. formElements</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;表单元素不需要data-role属性，但所有的表单一定要包含在form标签内部</p>
-<h4 id="3-_theme">3. theme</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;data-theme=”b”  把本页面内所有的风格变为黑色。</p>
-<h4 id="4-_buttons">4. buttons</h4><h5 id="常用类：">常用类：</h5><p>ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-shadow ui-btn-inline ui-btn-a ui-btn-b<br>ui-mini ui-btn-icon-left ui-btn-icon-right ui-btn-icon-top ui-btn-icon-bottom ui-btn-icon-notext<br>ui-state-disabled </p>
-<h5 id="按钮种类">按钮种类</h5><ul>
-<li>input标签，type=”reset” type=”submit” type=”button”</li>
-<li>data-enhanced,如果设置为 “true”, (default) jQuery Mobile 会自动为页面添加样式，使其更适合移动设备。如果设置为 “false”，则框架不会设置页面的样式。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">value</span>=<span class="value">"Left (default)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"right"</span> <span class="attribute">value</span>=<span class="value">"Right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"top"</span> <span class="attribute">value</span>=<span class="value">"Top"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"bottom"</span> <span class="attribute">value</span>=<span class="value">"Bottom"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-icon</span>=<span class="value">"delete"</span> <span class="attribute">data-iconpos</span>=<span class="value">"notext"</span> <span class="attribute">value</span>=<span class="value">"Icon only"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-left"</span>&gt;</span></span><br><span class="line">        Enhanced - Left</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Left"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-right"</span>&gt;</span></span><br><span class="line">        Enhanced - Right</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-top"</span>&gt;</span></span><br><span class="line">        Enhanced - Top</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Top"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-bottom"</span>&gt;</span></span><br><span class="line">        Enhanced - Bottom</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Bottom"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ui-input-btn ui-btn ui-icon-delete ui-btn-icon-notext"</span>&gt;</span></span><br><span class="line">        Enhanced - Icon only</span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">data-enhanced</span>=<span class="value">"true"</span> <span class="attribute">value</span>=<span class="value">"Enhanced - Icon only"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="5-_选择框">5. 选择框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"checkbox-0 "</span>&gt;</span>Check me</span><br><span class="line">    <span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>data-mini=”true” 设置大小</li>
-<li>fieldset加上data-role=”controlgroup”属性，设置为选择列表</li>
-<li>fieldset加上data-type=”horizontal”属性，设置为水平排列列表</li>
-<li>fieldset加上data-iconpos=”right”属性，设置label的位置</li>
-<li>fieldset加上data-theme=”b”,设置整体风格</li>
-<li>input加上disabled=””,设置为不可用选择框</li>
-</ul>
-<h4 id="6-_单选框">6. 单选框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"radio-choice-0"</span> <span class="attribute">id</span>=<span class="value">"radio-choice-0a"</span>&gt;</span>One</span><br><span class="line">    <span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"radio-choice-0b"</span>&gt;</span>Two<span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"radio-choice-0"</span> <span class="attribute">id</span>=<span class="value">"radio-choice-0b"</span> <span class="attribute">class</span>=<span class="value">"custom"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>fieldset加上data-role=”controlgroup”属性，设置为选择列表</li>
-<li>fieldset加上data-type=”horizontal”属性，设置为水平排列列表</li>
-<li>fieldset加上data-iconpos=”right”属性，设置label的位置</li>
-<li>fieldset加上data-theme=”b”,设置整体风格</li>
-<li>input加上disabled=””,设置为不可用选择框</li>
-</ul>
-<h4 id="7-_collapsible">7. collapsible</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-role</span>=<span class="value">"collapsible"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Heading<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>I'm the collapsible content. By default I'm closed, but you can click the header to open me.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>data-theme=”b” data-content-theme=”b” 给标题和内容分别设置theme</li>
-<li>默认展开 data-collapsed=”false”</li>
-<li>设置延展图标data-collapsed-icon=”carat-d” data-expanded-icon=”carat-u”</li>
-<li>不显示边界框 data-inset=”false”</li>
-</ul>
-<h4 id="8-_filterable">8. filterable</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">class</span>=<span class="value">"ui-filterable"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"filterBasic-input"</span> <span class="attribute">data-type</span>=<span class="value">"search"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">data-role</span>=<span class="value">"listview"</span> <span class="attribute">data-filter</span>=<span class="value">"true"</span> <span class="attribute">data-input</span>=<span class="value">"#filterBasic-input"</span> <span class="attribute">class</span>=<span class="value">"ui-responsive"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Acura<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Audi<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>BMW<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Cadillac<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Ferrari<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="对任何元素都可以进行搜索">对任何元素都可以进行搜索</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">data-type</span>=<span class="value">"search"</span> <span class="attribute">id</span>=<span class="value">"divOfPs-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"elements"</span> <span class="attribute">data-filter</span>=<span class="value">"true"</span> <span class="attribute">data-input</span>=<span class="value">"#divOfPs-input"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>These<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>tags<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>Tags<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>are<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>Filterable<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="data-filter-reveal=”true”属性_当搜索框为空时_数据显示区域为空，输入相应条件时_显示搜索结果。">data-filter-reveal=”true”属性 当搜索框为空时 数据显示区域为空，输入相应条件时 显示搜索结果。</h6><h6 id="data-enhanced=”true”属性，可以默认filter框的value值，预xuanran数据显示区域数据。">data-enhanced=”true”属性，可以默认filter框的value值，预xuanran数据显示区域数据。</h6><h6 id="自定义filter回调函数">自定义filter回调函数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$( <span class="built_in">document</span> ).one( <span class="string">"mobileinit"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$.mobile.filterable.prototype.options.filterCallback = <span class="function"><span class="keyword">function</span>(<span class="params"> index, searchValue </span>) </span>&#123;</span><br><span class="line">		<span class="comment">// In this function the keyword "this" refers to the element for which the</span></span><br><span class="line">		<span class="comment">// code must decide whether it is to be filtered or not.</span></span><br><span class="line">		<span class="comment">// A return value of true indicates that the element referred to by the</span></span><br><span class="line">		<span class="comment">// keyword "this" is to be filtered.</span></span><br><span class="line">		<span class="comment">// Returning false indicates that the item is to be displayed.</span></span><br><span class="line">		<span class="comment">//</span></span><br><span class="line">		<span class="comment">// your custom filtering logic goes here</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.mobile.document.one( <span class="string">"filterablecreate"</span>, <span class="string">"#myFilterable"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$( <span class="string">"#myFilterable"</span> ).filterable( <span class="string">"option"</span>, <span class="string">"filterCallback"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"> index, searchValue </span>) </span>&#123;</span><br><span class="line">		<span class="comment">// The previous example explains the signature of the callback function.</span></span><br><span class="line">		<span class="comment">//</span></span><br><span class="line">		<span class="comment">// your custom filtering logic goes here.</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$( <span class="string">".selector"</span> ).on( <span class="string">"filterablebeforefilter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"> e, data </span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> value;</span><br><span class="line"></span><br><span class="line">		e.preventDefault();</span><br><span class="line">		value = data.input.value;</span><br><span class="line">		<span class="comment">// trigger own request to database</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="9-_开关滑动条">9. 开关滑动条</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"flip-checkbox-1"</span>&gt;</span>Flip toggle switch checkbox:<span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">data-role</span>=<span class="value">"flipswitch"</span> <span class="attribute">name</span>=<span class="value">"flip-checkbox-1"</span> <span class="attribute">id</span>=<span class="value">"flip-checkbox-1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"flip-select"</span>&gt;</span>Flip toggle switch select:<span class="tag">&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">select</span> <span class="attribute">id</span>=<span class="value">"flip-select"</span> <span class="attribute">name</span>=<span class="value">"flip-select"</span> <span class="attribute">data-role</span>=<span class="value">"flipswitch"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span>&gt;</span>Off<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span>&gt;</span>On<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="常用属性：">常用属性：</h6><p>data-on-text=”Light” data-off-text=”Dark” data-wrapper-class=”custom-label-flipswitch” data-wrapper-class=”custom-size-flipswitch”</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-jquery-mobile学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/27/jquery-mobile学习/" class="article-date">
-      <time datetime="2015-11-27T02:34:07.000Z" itemprop="datePublished">2015-11-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/27/jquery-mobile学习/">jquery-mobile学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="jquery-mobile学习笔记">jquery-mobile学习笔记</h2><ol>
-<li>加载页面<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过调用jquery mobile的loadPage()方法，可以将人意页面加载到当前的DOM中，执行完该方法之后，pagecreate事件重新被处罚，因为整个DOM的结构发生了变化，制定的目标页面已注入当前文档。</li>
-<li>对话框<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在指向页面链接元素中添加”data-rel”属性为”dialog”，则单击该链接的时候，打开的页面将以一个对话框的形式展示在浏览器中。单击对话框任意链接，对话框自动关闭，并以回退形式至上一页面。也可以在对话框中创建取消按钮，通过设置元素属性或编写js代码关闭对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在对话框添加链接按钮”data-rel”=”back”可关闭对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或者js代码 $(“.ui-dialog”).dialog(“close”);</li>
-<li>工具栏与格式化内容<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”data-add-back-btn”=”back”设置为回退按钮<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”data-back-btn－text”=”<em>*</em>“设置回退按钮的文字为＊＊＊</li>
-<li>“page”容器元素的“data-add-back-btn”为true时表示切换到该容器，头部栏显示默认的回退按钮。或者$.mobile.page.prototype.options.backBtnText=”<em>*</em>“<br>data-icon=”arrow-l”  “arrow-r” 分别显示左右按钮图标.<br>设定按钮位置 添加类别属性 class=”ui-btn-left” “ui-btn-right”.</li>
-<li>导航栏<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将div标签的data-role设置为navbar便会产生一个导航栏容器，在该容器内，将ul元素设置导航栏的各子类导航按钮，每一行最多可以设置5个按钮，超出个数的按钮自动显示在下一行，另外，导航栏中的按钮可以引用系统图标，也可以自定义图标。<br>class=”ui-btn-active”设置导航按钮为选中状态。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
