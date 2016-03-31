@@ -222,6 +222,101 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-前端面试题准备" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/31/前端面试题准备/" class="article-date">
+      <time datetime="2016-03-31T02:58:24.000Z" itemprop="datePublished">2016-03-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/31/前端面试题准备/">前端面试题准备</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-webpack的优势">1.webpack的优势</h1><p>WebPack 是一个模块打包工具，你可以使用WebPack管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包Web开发中所用到的HTML、Javascript、CSS以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，webpack有对应的模块加载器。webpack模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态资源。</p>
+<ul>
+<li>以commonJs的形式书写脚本，对AMD/CMD的支持全面，方便就项目进行代码迁移。</li>
+<li>webpack具有requireJs和browserify的功能，仍有自己的很多新特性。</li>
+<li>对 CommonJS 、 AMD 、ES6的语法做了兼容。</li>
+<li>对js、css、图片等资源文件都支持打包</li>
+<li>串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，例如提供对CoffeeScript、ES6的支持</li>
+<li>有独立的配置文件webpack.config.js</li>
+<li>可以将代码切割成不同的chunk，实现按需加载，降低了初始化时间</li>
+<li>支持 SourceUrls 和 SourceMaps，易于调试</li>
+<li>具有强大的Plugin接口，大多是内部插件，使用起来比较灵活</li>
+<li>webpack 使用异步 IO 并具有多级缓存。这使得 webpack 很快且在增量编译上更加快</li>
+</ul>
+<h1 id="TCP传输的三次握手和四次挥手。">TCP传输的三次握手和四次挥手。</h1><p>为了准确无误地把数据送达目标处，TCP协议采用了三次握手策略。用TCP协议把数据包送出去后，TCP不会对传送 后的情况置之不理，它一定会向对方确认是否成功送达。握手过程中使用了TCP的标志：SYN和ACK。</p>
+<ul>
+<li>1.发送端首先发送一个带SYN标志的数据包给对方。</li>
+<li>2.接受端收到数据包之后，回传一个带SYN／ACK的数据包以示传达确认信息。</li>
+<li>3.最后发送端再回传一个带ACK标志的数据包，代表握手结束。<br>在握手过程中，若在某个阶段莫名中断，TCP协议会再次以相同的顺序发送相同的数据包。</li>
+</ul>
+<ul>
+<li>断开tcp连接需要四次挥手</li>
+</ul>
+<ul>
+<li>1.主动关闭方发送一个FIN，用来关闭主动方到被动方的数据传送，但是此时主动关闭方还可以接收数据。</li>
+<li>2.被动关闭方收到FIN，发送ACK给对方，确认序号为受到序号＋1</li>
+<li>3.被动关闭方发送一个FIN，用来关闭被动方道主动方的数据传送。</li>
+<li>4.主动方接受到FIN后，发送ACK给被动方，确认序号为收到序号＋1，完成四次挥手。</li>
+</ul>
+<h1 id="TCP和UDP的区别">TCP和UDP的区别</h1><ul>
+<li>TCP：传输控制协议。基于连接的协议，在正式发送数据前，必须和对方建立可靠的连接。</li>
+<li>UDP: 用户数据报协议。面向非连接的协议，不与对方建立连接，而直接把数据包发送过去。</li>
+</ul>
+<h1 id="作用域链">作用域链</h1><p>作用域链的作用是保证执行环境里有权访问的变量和函数是有序的，作用域链的变量只能向上访问，变量访问到window对象即被终止，作用域链向下访问变量是不允许的。</p>
+<h1 id="创建ajax的过程">创建ajax的过程</h1><ul>
+<li>创建XMLHttpRequest对象，也就是创建一个异步调用对象。</li>
+<li>创建一个新的HTTP请求，并指定该HTTP请求的方法，URL以及验证信息。</li>
+<li>设置响应HTTP请求状态变化的函数。</li>
+<li>发送HTTP请求</li>
+<li>获取异步调用返回的数据。</li>
+<li>使用js和DOM实现局部的刷新。</li>
+</ul>
+<h1 id="渐进增强和优雅降级">渐进增强和优雅降级</h1><p>渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<p>优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Pascal-s-Triangle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -784,85 +879,6 @@
 <h2 id="元素可见性">元素可见性</h2><p>visibility:visible,hidden,collapses,inherit<br><strong> 处于hidden时，虽然不可见，但是不影响文档布局，与display:none有区别。使元素不可见，但是不删除其内容框 </strong></p>
 <h1 id="绝对定位">绝对定位</h1><p><strong> 绝对定位的包含块是最近的position值部位static的祖先元素。通常会选择一个元素作为绝对定位元素的包含块，将position设置为relative且没有偏移 </strong><br><strong> 元素绝对定位时，也会为后代元素建立一个包含块</strong></p>
 <p><strong> 如果文档可滚动，定位元素会随着它滚动，只要绝对定位元素不是固定定位元素的后代。 </strong><br><strong> 如果一个绝对定位元素的top或者left或者right属性设置为auto，则其位置为其静态位置，即元素在正常流中原本的位置 </strong></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-webpack-学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/04/webpack-学习/" class="article-date">
-      <time datetime="2016-03-04T06:02:44.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/webpack-学习/">webpack 学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="webpack简介">webpack简介</h4><p>webpack是一个打包工具，而不是像RequireJS或SeaJS这样的模块加载器，通过使用Webpack，能够像Node.js一样处理依赖关系，然后解析出模块之间的依赖，将代码打包。</p>
-<h4 id="安装">安装</h4><p>通过npm install -g webpack安装webpack，当然也可以通过gulp来处理webpack任务，如果使用gulp的话就npm install –save-dev gulp-webpack。</p>
-<h4 id="配置">配置</h4><p>Webpack的构建过程需要一个配置文件，一个典型的配置文件大概就是这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> commonsPlugin = <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        entry1: <span class="string">'./entry/entry1.js'</span>,</span><br><span class="line">        entry2: <span class="string">'./entry/entry2.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname,</span><br><span class="line">        filename: <span class="string">'[name].entry.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        loaders: [&#123;</span><br><span class="line">            test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">            loader: <span class="string">'babel-loader'</span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            test: <span class="regexp">/\.jsx$/</span>,</span><br><span class="line">            loader: <span class="string">'babel-loader!jsx-loader?harmony'</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [commonsPlugin]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>这里对Webpack的打包行为做了配置，主要分为几个部分：</p>
-<ul>
-<li>entry：指定打包的入口文件，每有一个键值对，就是一个入口文件</li>
-<li>output：配置打包结果，path定义了输出的文件夹，filename则定义了打包结果文件的名称，filename里面的[name]会由entry中的键（这里是entry1和entry2）替换</li>
-<li>resolve：定义了解析模块路径时的配置，常用的就是extensions，可以用来指定模块的后缀，这样在引入模块时就不需要写后缀了，会自动补全</li>
-<li>module：定义了对模块的处理逻辑，这里可以用loaders定义了一系列的加载器，以及一些正则。当需要加载的文件匹配test的正则时，就会调用后面的loader对文件进行处理，这正是webpack强大的原因。比如这里定义了凡是.js结尾的文件都是用babel-loader做处理，而.jsx结尾的文件会先经过jsx-loader处理，然后经过babel-loader处理。当然这些loader也需要通过npm install安装</li>
-<li>plugins: 这里定义了需要使用的插件，比如commonsPlugin在打包多个入口文件时会提取出公用的部分，生成common.js</li>
-</ul>
-<p>Webpack还有很多其他的配置，具体可以参照它的<a href="http://webpack.github.io/docs/configuration.html#entry" target="_blank" rel="external">配置文档</a></p>
-<h4 id="执行打包">执行打包</h4><p>如果通过npm install -g webpack方式安装webpack的话，可以通过命令行直接执行打包命令，比如这样：<br><strong> $webpack –config webpack.config.js </strong><br>这样就会读取当前目录下的webpack.config.js作为配置文件执行打包操作。<br>如果是通过gulp插件gulp-webpack，则可以在gulpfile中写上gulp任务：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'gulp-webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'./webpack.config'</span>);</span><br><span class="line">gulp.task(<span class="string">"webpack"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp</span><br><span class="line">        .src(<span class="string">'./'</span>)</span><br><span class="line">        .pipe(webpack(webpackConfig))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./build'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h4 id="组建编写">组建编写</h4><p><strong> Webpack使得我们可以使用Node.js的CommonJS规范来编写模块. </strong>比如一个简单的Hello world模块，就可以这么处理：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> React = <span class="built_in">require</span>(<span class="string">'react'</span>);</span><br><span class="line"><span class="keyword">var</span> HelloWorldComponent = React.createClass(&#123;</span><br><span class="line">    displayName: <span class="string">'HelloWorldComponent'</span>,</span><br><span class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">module</span>.exports = HelloWorldComponent;</span><br></pre></td></tr></table></figure></p>
-<p>代码可以进行进一步的修改简化，通过babel-loader。Babel能够将ES6代码转换成ES5。首先需要通过命令npm install –save-dev babel-loader来进行安装，安装完成后就可以使用了，一种使用方式是之前介绍的在webpack.config.js的loaders中配置，另一种是直接在代码中使用，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloWorldComponent = <span class="built_in">require</span>(<span class="string">'!babel!jsx!./HelloWorldComponent'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>通过babel修改提升后的代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样在其他组件中需要引入HelloWorldComponent组件，就只要就可以了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> HelloWorldComponent <span class="keyword">from</span> <span class="string">'./HelloWorldComponent'</span></span><br></pre></td></tr></table></figure></p>
-<p>通过import引入模块，还可以直接定义类和类的继承关系，这里也不再需要getInitialState了，直接在构造函数constructor中用this.state = xxx就好了。<br>Babel带来的当然还不止这些，在其帮助下还能尝试很多优秀的ES6特性，比如箭头函数，箭头函数的特点就是内部的this和外部保持一致，从此可以和that、_this说再见了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>].map((c) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">span</span>&gt;</span>&#123;c&#125;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>)</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>其他还有很多，具体可以参照<a href="https://babeljs.io/docs/learn-es6/" target="_blank" rel="external">Babel的学习文档</a></p>
-<h4 id="样式编写">样式编写</h4><p>Webpack组织的React组件中编写样式如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.less$/,</span><br><span class="line">  loader: <span class="string">'style-loader!css-loader!autoprefixer-loader!less-loader'</span></span><br><span class="line"></span></span></span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过这样的配置，就可以直接在模块代码中引入Less样式了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./HelloWorldComponent.less'</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Webpack的loader为React组件化提供了很多帮助，像图片也提供了相关的loader：<br>    { test: /.png$/, loader: “url-loader?mimetype=image/png” }<br>更多地loader可以移步<a href="https://github.com/webpack/docs/wiki/list-of-loaders" target="_blank" rel="external">webpack的wiki</a></p>
-<h4 id="在Webpack下实时调试React组件">在Webpack下实时调试React组件</h4><p>Webpack和React结合的另一个强大的地方就是，在修改了组件源码之后，不刷新页面就能把修改同步到页面上。这里需要用到两个库webpack-dev-server和react-hot-loader。<br>首先需要安装这两个库，npm install –save-dev webpack-dev-server react-hot-loader<br>安装完成后，就要开始配置了，首先需要修改entry配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">  helloworld: [</span><br><span class="line">    <span class="string">'webpack-dev-server/client?http://localhost:3000'</span>,</span><br><span class="line">    <span class="string">'webpack/hot/only-dev-server'</span>,</span><br><span class="line">    <span class="string">'./helloworld'</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
-<p>通过这种方式指定资源热启动对应的服务器，然后需要配置react-hot-loader到loaders的配置当中，比如我的所有组件代码全部放在scripts文件夹下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: <span class="regexp">/\.js?$/</span>,</span><br><span class="line">  loaders: [<span class="string">'react-hot'</span>, <span class="string">'babel'</span>],</span><br><span class="line">  include: [path.join(__dirname, <span class="string">'scripts'</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后配置一下plugins，加上热替换的插件和防止报错的插件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</span><br><span class="line">  <span class="keyword">new</span> webpack.NoErrorsPlugin()</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>这样配置就完成了，但是现在要调试需要启动一个服务器，而且之前配置里映射到<a href="http://localhost:3000，所以就在本地3000端口起个服务器吧，在项目根目录下面建个server.js：" target="_blank" rel="external">http://localhost:3000，所以就在本地3000端口起个服务器吧，在项目根目录下面建个server.js：</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> WebpackDevServer = <span class="built_in">require</span>(<span class="string">'webpack-dev-server'</span>);</span><br><span class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'./webpack.config'</span>);</span><br><span class="line"><span class="keyword">new</span> WebpackDevServer(webpack(config), &#123;</span><br><span class="line">  publicPath: config.output.publicPath,</span><br><span class="line">  hot: <span class="literal">true</span>,</span><br><span class="line">  historyApiFallback: <span class="literal">true</span></span><br><span class="line">&#125;).listen(<span class="number">3000</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="built_in">console</span>.log(err);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Listening at localhost:3000'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样就可以在本地3000端口开启调试服务器了，比如我的页面是根目录下地index.html，就可以直接通过<a href="http://localhost:3000/index.html访问页面，修改React组件后页面也会被同步修改，这里貌似使用了websocket来同步数据。" target="_blank" rel="external">http://localhost:3000/index.html访问页面，修改React组件后页面也会被同步修改，这里貌似使用了websocket来同步数据。</a></p>
 
       
     </div>

@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>二叉树的最大深度 | 纪晔</title>
+  <title>前端面试题准备 | 纪晔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="递归法12345678var maxDepth = function(root) &amp;#123;    if(!root)&amp;#123;        return 0;    &amp;#125;    else&amp;#123;        return Math.max((maxDepth(root.left)+1),(maxDepth(root.right)+1));    &amp;#125;&amp;#125;;
-迭">
+  <meta name="description" content="1.webpack的优势WebPack 是一个模块打包工具，你可以使用WebPack管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包Web开发中所用到的HTML、Javascript、CSS以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，webpack有对应的模块加载器。webpack模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的最大深度">
-<meta property="og:url" content="http://summerface.github.io/2016/03/11/二叉树的最大深度/index.html">
+<meta property="og:title" content="前端面试题准备">
+<meta property="og:url" content="http://summerface.github.io/2016/03/31/前端面试题准备/index.html">
 <meta property="og:site_name" content="纪晔">
-<meta property="og:description" content="递归法12345678var maxDepth = function(root) &amp;#123;    if(!root)&amp;#123;        return 0;    &amp;#125;    else&amp;#123;        return Math.max((maxDepth(root.left)+1),(maxDepth(root.right)+1));    &amp;#125;&amp;#125;;
-迭">
-<meta property="og:updated_time" content="2016-03-11T03:32:06.000Z">
+<meta property="og:description" content="1.webpack的优势WebPack 是一个模块打包工具，你可以使用WebPack管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包Web开发中所用到的HTML、Javascript、CSS以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，webpack有对应的模块加载器。webpack模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态">
+<meta property="og:updated_time" content="2016-03-31T04:00:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树的最大深度">
-<meta name="twitter:description" content="递归法12345678var maxDepth = function(root) &amp;#123;    if(!root)&amp;#123;        return 0;    &amp;#125;    else&amp;#123;        return Math.max((maxDepth(root.left)+1),(maxDepth(root.right)+1));    &amp;#125;&amp;#125;;
-迭">
+<meta name="twitter:title" content="前端面试题准备">
+<meta name="twitter:description" content="1.webpack的优势WebPack 是一个模块打包工具，你可以使用WebPack管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包Web开发中所用到的HTML、Javascript、CSS以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，webpack有对应的模块加载器。webpack模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态">
   
     <link rel="alternative" href="/atom.xml" title="纪晔" type="application/atom+xml">
   
@@ -221,11 +218,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-二叉树的最大深度" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-前端面试题准备" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/11/二叉树的最大深度/" class="article-date">
-      <time datetime="2016-03-11T03:20:38.000Z" itemprop="datePublished">2016-03-11</time>
+      <a href="/2016/03/31/前端面试题准备/" class="article-date">
+      <time datetime="2016-03-31T02:58:24.000Z" itemprop="datePublished">2016-03-31</time>
 </a>
     </div>
   
@@ -238,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      二叉树的最大深度
+      前端面试题准备
     </h1>
   
 
@@ -255,8 +252,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="递归法">递归法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.max((maxDepth(root.left)+<span class="number">1</span>),(maxDepth(root.right)+<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="迭代法">迭代法</h1>
+        <h1 id="1-webpack的优势">1.webpack的优势</h1><p>WebPack 是一个模块打包工具，你可以使用WebPack管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包Web开发中所用到的HTML、Javascript、CSS以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，webpack有对应的模块加载器。webpack模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态资源。</p>
+<ul>
+<li>以commonJs的形式书写脚本，对AMD/CMD的支持全面，方便就项目进行代码迁移。</li>
+<li>webpack具有requireJs和browserify的功能，仍有自己的很多新特性。</li>
+<li>对 CommonJS 、 AMD 、ES6的语法做了兼容。</li>
+<li>对js、css、图片等资源文件都支持打包</li>
+<li>串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，例如提供对CoffeeScript、ES6的支持</li>
+<li>有独立的配置文件webpack.config.js</li>
+<li>可以将代码切割成不同的chunk，实现按需加载，降低了初始化时间</li>
+<li>支持 SourceUrls 和 SourceMaps，易于调试</li>
+<li>具有强大的Plugin接口，大多是内部插件，使用起来比较灵活</li>
+<li>webpack 使用异步 IO 并具有多级缓存。这使得 webpack 很快且在增量编译上更加快</li>
+</ul>
+<h1 id="TCP传输的三次握手和四次挥手。">TCP传输的三次握手和四次挥手。</h1><p>为了准确无误地把数据送达目标处，TCP协议采用了三次握手策略。用TCP协议把数据包送出去后，TCP不会对传送 后的情况置之不理，它一定会向对方确认是否成功送达。握手过程中使用了TCP的标志：SYN和ACK。</p>
+<ul>
+<li>1.发送端首先发送一个带SYN标志的数据包给对方。</li>
+<li>2.接受端收到数据包之后，回传一个带SYN／ACK的数据包以示传达确认信息。</li>
+<li>3.最后发送端再回传一个带ACK标志的数据包，代表握手结束。<br>在握手过程中，若在某个阶段莫名中断，TCP协议会再次以相同的顺序发送相同的数据包。</li>
+</ul>
+<ul>
+<li>断开tcp连接需要四次挥手</li>
+</ul>
+<ul>
+<li>1.主动关闭方发送一个FIN，用来关闭主动方到被动方的数据传送，但是此时主动关闭方还可以接收数据。</li>
+<li>2.被动关闭方收到FIN，发送ACK给对方，确认序号为受到序号＋1</li>
+<li>3.被动关闭方发送一个FIN，用来关闭被动方道主动方的数据传送。</li>
+<li>4.主动方接受到FIN后，发送ACK给被动方，确认序号为收到序号＋1，完成四次挥手。</li>
+</ul>
+<h1 id="TCP和UDP的区别">TCP和UDP的区别</h1><ul>
+<li>TCP：传输控制协议。基于连接的协议，在正式发送数据前，必须和对方建立可靠的连接。</li>
+<li>UDP: 用户数据报协议。面向非连接的协议，不与对方建立连接，而直接把数据包发送过去。</li>
+</ul>
+<h1 id="作用域链">作用域链</h1><p>作用域链的作用是保证执行环境里有权访问的变量和函数是有序的，作用域链的变量只能向上访问，变量访问到window对象即被终止，作用域链向下访问变量是不允许的。</p>
+<h1 id="创建ajax的过程">创建ajax的过程</h1><ul>
+<li>创建XMLHttpRequest对象，也就是创建一个异步调用对象。</li>
+<li>创建一个新的HTTP请求，并指定该HTTP请求的方法，URL以及验证信息。</li>
+<li>设置响应HTTP请求状态变化的函数。</li>
+<li>发送HTTP请求</li>
+<li>获取异步调用返回的数据。</li>
+<li>使用js和DOM实现局部的刷新。</li>
+</ul>
+<h1 id="渐进增强和优雅降级">渐进增强和优雅降级</h1><p>渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<p>优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+
       
     </div>
     
@@ -264,13 +303,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/11/二叉树的最大深度/">二叉树的最大深度</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/31/前端面试题准备/">前端面试题准备</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 纪晔 的个人博客">纪晔</a></p>
-        <p><span>发布时间:</span>2016年03月11日 - 11时20分</p>
-        <p><span>最后更新:</span>2016年03月11日 - 11时32分</p>
+        <p><span>发布时间:</span>2016年03月31日 - 10时58分</p>
+        <p><span>最后更新:</span>2016年03月31日 - 12时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/11/二叉树的最大深度/" title="二叉树的最大深度">http://summerface.github.io/2016/03/11/二叉树的最大深度/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://summerface.github.io/2016/03/11/二叉树的最大深度/　　作者: 纪晔" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/31/前端面试题准备/" title="前端面试题准备">http://summerface.github.io/2016/03/31/前端面试题准备/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://summerface.github.io/2016/03/31/前端面试题准备/　　作者: 纪晔" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -283,16 +322,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/11/阶乘中0的个数/">
-                    阶乘中0的个数
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/10/反转链表/">
-                    反转链表
+                <a href="/2016/03/23/Pascal-s-Triangle/">
+                     Pascal&#39;s Triangle
                 </a>
             </div>
         
@@ -303,7 +336,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#递归法"><span class="toc-number">1.</span> <span class="toc-text">递归法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#迭代法"><span class="toc-number">2.</span> <span class="toc-text">迭代法</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-webpack的优势"><span class="toc-number">1.</span> <span class="toc-text">1.webpack的优势</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP传输的三次握手和四次挥手。"><span class="toc-number">2.</span> <span class="toc-text">TCP传输的三次握手和四次挥手。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP和UDP的区别"><span class="toc-number">3.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作用域链"><span class="toc-number">4.</span> <span class="toc-text">作用域链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建ajax的过程"><span class="toc-number">5.</span> <span class="toc-text">创建ajax的过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#渐进增强和优雅降级"><span class="toc-number">6.</span> <span class="toc-text">渐进增强和优雅降级</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -371,15 +404,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/11/阶乘中0的个数/" title="上一篇: 阶乘中0的个数">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/10/反转链表/" title="下一篇: 反转链表">
+            <a href="/2016/03/23/Pascal-s-Triangle/" title="下一篇:  Pascal&#39;s Triangle">
                 <i class="fa fa-angle-right"></i>
             </a>
         
