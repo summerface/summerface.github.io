@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      排序算法 | 纪晔 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="纪晔">
+    
+    
+
+    <meta name="description" content="堆排序
+若想得到升序，则构建大顶堆。若想得到降序，则构建小顶堆。
+
+堆排序的思想：
+
+构建堆
+输出堆顶元素后，用表中最后一个元素填补它的位置，剩余元素从上到下调整称为新的堆。
+
+若根节点从0开始，则i节点的左右孩子节点下标分别为2i+1,2i+2.
+堆的插入
+新元素添加到末尾，随后树被更新以恢复堆排序,(i-1)/2为父节点的下标。大顶堆插入代码如下：123456void MinHeapFixup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法 | 纪晔">
+<meta property="og:url" content="http://summerface.github.io/2016/04/05/排序算法/index.html">
+<meta property="og:site_name" content="纪晔">
+<meta property="og:description" content="堆排序
+若想得到升序，则构建大顶堆。若想得到降序，则构建小顶堆。
+
+堆排序的思想：
+
+构建堆
+输出堆顶元素后，用表中最后一个元素填补它的位置，剩余元素从上到下调整称为新的堆。
+
+若根节点从0开始，则i节点的左右孩子节点下标分别为2i+1,2i+2.
+堆的插入
+新元素添加到末尾，随后树被更新以恢复堆排序,(i-1)/2为父节点的下标。大顶堆插入代码如下：123456void MinHeapFixup">
+<meta property="og:updated_time" content="2016-04-05T07:52:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="排序算法 | 纪晔">
+<meta name="twitter:description" content="堆排序
+若想得到升序，则构建大顶堆。若想得到降序，则构建小顶堆。
+
+堆排序的思想：
+
+构建堆
+输出堆顶元素后，用表中最后一个元素填补它的位置，剩余元素从上到下调整称为新的堆。
+
+若根节点从0开始，则i节点的左右孩子节点下标分别为2i+1,2i+2.
+堆的插入
+新元素添加到末尾，随后树被更新以恢复堆排序,(i-1)/2为父节点的下标。大顶堆插入代码如下：123456void MinHeapFixup">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight.css" type="text/css">
+    <link rel="stylesheet" href="/css/archive.css" type="text/css">
+    <link rel="stylesheet" href="/css/china-social-icon.css" type="text/css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">纪晔</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">排序算法</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-05" class="post-meta__date date">2016-04-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="堆排序">堆排序</h1><ul>
+<li>若想得到升序，则构建大顶堆。若想得到降序，则构建小顶堆。</li>
+</ul>
+<p>堆排序的思想：</p>
+<ul>
+<li>构建堆</li>
+<li>输出堆顶元素后，用表中最后一个元素填补它的位置，剩余元素从上到下调整称为新的堆。</li>
+</ul>
+<p>若根节点从0开始，则i节点的左右孩子节点下标分别为2<em>i+1,2</em>i+2.</p>
+<h2 id="堆的插入">堆的插入</h2><ul>
+<li>新元素添加到末尾，随后树被更新以恢复堆排序,(i-1)/2为父节点的下标。<br>大顶堆插入代码如下：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MinHeapFixup</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=(i-<span class="number">1</span>)/<span class="number">2</span>,j&gt;=<span class="number">0</span>&amp;&amp;i!=<span class="number">0</span>&amp;&amp;a[i]&gt;a[j];i=j,j=(i-<span class="number">1</span>)/<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		swap(a[i],a[j])</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="堆的删除">堆的删除</h2><ul>
+<li>每次都只能删除第0个数据，然后将最后一个数据值赋给跟节点，从根节点开始从上到下调整。<br>代码如下:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MinHeapFixdown</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> i, <span class="keyword">int</span> n)</span>  </span><br><span class="line"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> j, temp;  </span><br><span class="line">    temp = a[i];  </span><br><span class="line">    j = <span class="number">2</span> * i + <span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">while</span> (j &lt; n)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; a[j + <span class="number">1</span>] &lt; a[j]) <span class="comment">//在左右孩子中找最小的  </span></span><br><span class="line">            j++;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span> (a[j] &gt;= temp)  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">  </span><br><span class="line">        a[i] = a[j];     <span class="comment">//把较小的子结点往上移动,替换它的父结点  </span></span><br><span class="line">        i = j;  </span><br><span class="line">        j = <span class="number">2</span> * i + <span class="number">1</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    a[i] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//在最小堆中删除数  </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MinHeapDeleteNumber</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span>  </span><br><span class="line"></span>&#123;  </span><br><span class="line">    Swap(a[<span class="number">0</span>], a[n - <span class="number">1</span>]);  </span><br><span class="line">    MinHeapFixdown(a, <span class="number">0</span>, n - <span class="number">1</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="堆排序-1">堆排序</h2><p>更新堆的代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MinHeapFixdown</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> i, <span class="keyword">int</span> n)</span>  <span class="comment">//i指的当前调整位置，n指的总节点数目</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = a[i];</span><br><span class="line">	<span class="keyword">int</span> j = i*<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(j&lt;n)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j+<span class="number">1</span>&lt;n&amp;&amp;a[j+<span class="number">1</span>]&lt;a[j])<span class="comment">//在左右孩子中找到最小的</span></span><br><span class="line">		&#123;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(a[j]&gt;=temp)&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		a[i] = a[j];</span><br><span class="line">		i = j;</span><br><span class="line">		j = <span class="number">2</span>*i+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	a[i] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>构建最小堆<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Minheapsortscendarray</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        Swap(a[i], a[<span class="number">0</span>]);  </span><br><span class="line">        MinHeapFixdown(a, <span class="number">0</span>, i);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="快速排序">快速排序</h1><p>快速排序的思想为：</p>
+<ul>
+<li>找出一个元素作为基准(pivot)</li>
+<li>对数组进行分区操作，使其基准左侧元素的值都不大于基准值，右侧元素值都不小于基准值，- 再对左右区间重复第二步，直到各区间只有一个数。</li>
+</ul>
+<ul>
+<li>核心算法：分区操作，调整基准位置以及返回基准最终位置以便分治递归。<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">void Qsort(int a[], int low, int high)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(low &gt;= high)</span><br><span class="line">    &#123;</span><br><span class="line"><span class="command">        return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    int <span class="keyword">first</span> = low;</span><br><span class="line">    int <span class="keyword">last</span> = high;</span><br><span class="line">    int key = a[<span class="keyword">first</span>];/*用字表的第一个记录作为枢轴*/</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span>(<span class="keyword">first</span> &lt; <span class="keyword">last</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">first</span> &lt; <span class="keyword">last</span> &amp;&amp; a[<span class="keyword">last</span>] &gt;= key)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">--last;</span></span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        a[<span class="keyword">first</span>] = a[<span class="keyword">last</span>];/*将比第一个小的移到低端*/</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">first</span> &lt; <span class="keyword">last</span> &amp;&amp; a[<span class="keyword">first</span>] &lt;= key)</span><br><span class="line">        &#123;</span><br><span class="line">            ++<span class="keyword">first</span>;</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">        a[<span class="keyword">last</span>] = a[<span class="keyword">first</span>];    </span><br><span class="line">/*将比第一个大的移到高端*/</span><br><span class="line">    &#125;</span><br><span class="line">    a[<span class="keyword">first</span>] = key;/*枢轴记录到位*/</span><br><span class="line">    Qsort(a, low, <span class="keyword">first</span>-<span class="number">1</span>);</span><br><span class="line">    Qsort(a, <span class="keyword">first</span>+<span class="number">1</span>, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

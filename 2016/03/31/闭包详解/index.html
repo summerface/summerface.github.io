@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      闭包详解 | 纪晔 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="纪晔">
+    
+    
+
+    <meta name="description" content="闭包的特性
+函数嵌套函数
+函数内部可以饮用外部的参数和变量
+参数和变量不会被垃圾回收机制回收
+
+闭包的定义以及优缺点
+闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的常见方式就是在一个函数内创建另一个函数，通过另一个函数来访问这个函数的局部变量。闭包常驻内存，会增大内存使用，使用不当易造成内存泄漏。一般函数执行完毕之后，局部活动对象被销毁，内存中仅仅保存全局作用域，但闭包不同，应用闭包主要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闭包详解 | 纪晔">
+<meta property="og:url" content="http://summerface.github.io/2016/03/31/闭包详解/index.html">
+<meta property="og:site_name" content="纪晔">
+<meta property="og:description" content="闭包的特性
+函数嵌套函数
+函数内部可以饮用外部的参数和变量
+参数和变量不会被垃圾回收机制回收
+
+闭包的定义以及优缺点
+闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的常见方式就是在一个函数内创建另一个函数，通过另一个函数来访问这个函数的局部变量。闭包常驻内存，会增大内存使用，使用不当易造成内存泄漏。一般函数执行完毕之后，局部活动对象被销毁，内存中仅仅保存全局作用域，但闭包不同，应用闭包主要">
+<meta property="og:updated_time" content="2016-03-31T05:54:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="闭包详解 | 纪晔">
+<meta name="twitter:description" content="闭包的特性
+函数嵌套函数
+函数内部可以饮用外部的参数和变量
+参数和变量不会被垃圾回收机制回收
+
+闭包的定义以及优缺点
+闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的常见方式就是在一个函数内创建另一个函数，通过另一个函数来访问这个函数的局部变量。闭包常驻内存，会增大内存使用，使用不当易造成内存泄漏。一般函数执行完毕之后，局部活动对象被销毁，内存中仅仅保存全局作用域，但闭包不同，应用闭包主要">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight.css" type="text/css">
+    <link rel="stylesheet" href="/css/archive.css" type="text/css">
+    <link rel="stylesheet" href="/css/china-social-icon.css" type="text/css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">纪晔</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">闭包详解</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-03-31" class="post-meta__date date">2016-03-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/标签/javascript/">javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h5 id="闭包的特性">闭包的特性</h5><ul>
+<li>函数嵌套函数</li>
+<li>函数内部可以饮用外部的参数和变量</li>
+<li>参数和变量不会被垃圾回收机制回收</li>
+</ul>
+<h5 id="闭包的定义以及优缺点">闭包的定义以及优缺点</h5><ul>
+<li>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的常见方式就是在一个函数内创建另一个函数，通过另一个函数来访问这个函数的局部变量。<br>闭包常驻内存，会增大内存使用，使用不当易造成内存泄漏。<br>一般函数执行完毕之后，局部活动对象被销毁，内存中仅仅保存全局作用域，但闭包不同，应用闭包主要是为了设计私有的方法和变量。<h5 id="函数声明与函数表达式">函数声明与函数表达式</h5>可以通过”()”将函数声明变成表达式<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">123</span>);</span><br><span class="line">&#125;)();                   <span class="comment">//然后通过()直接调用前面的表达式即可，因此函数可以不必写名字；</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="模块化代码，减少全局变量污染">模块化代码，减少全局变量污染</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> abc = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;      <span class="comment">//abc为外部匿名函数的返回值</span></span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                a++;</span><br><span class="line">                alert(a);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">abc();    <span class="comment">//2 ；调用一次abc函数，其实是调用里面内部函数的返回值    </span></span><br><span class="line">abc();    <span class="comment">//3</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="私有成员的存在">私有成员的存在</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> aaa = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                a++;</span><br><span class="line">                alert(a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ccc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                a++;</span><br><span class="line">                alert(a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">                b:bbb,             <span class="comment">//json结构</span></span><br><span class="line">                c:ccc</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">aaa.b();     <span class="comment">//2</span></span><br><span class="line">aaa.c()      <span class="comment">//3</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="在循环中找到对应元素">在循环中找到对应元素</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> <span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" </span><br><span class="line">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span> <span class="attribute">xml:lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=UTF-8"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aLi.length;i++)&#123;</span><br><span class="line">                    aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;        <span class="comment">//当点击时for循环已经结束</span></span><br><span class="line">                    alert(i);</span><br><span class="line">                    &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>123<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>456<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>789<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>010<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用闭包改写上面代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" </span><br><span class="line">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span> <span class="attribute">xml:lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=UTF-8"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aLi.length;i++)&#123;</span><br><span class="line">                    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">                            aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                                    alert(i);</span><br><span class="line">                            &#125;;</span><br><span class="line">                    &#125;)(i);</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>123<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>456<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="title">li</span>&gt;</span>789<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="内存泄漏问题">内存泄漏问题</h5><p>由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁驻留在内存中的元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">closure</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'oDiv'</span>);<span class="comment">//oDiv用完之后一直驻留在内存中</span></span><br><span class="line">    oDiv.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">'oDiv.innerHTML'</span>);<span class="comment">//这里用oDiv导致内存泄露</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">closure();</span><br><span class="line"><span class="comment">//最后应将oDiv解除引用来避免内存泄露</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">closure</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'oDiv'</span>);</span><br><span class="line">    <span class="keyword">var</span> test = oDiv.innerHTML;</span><br><span class="line">    oDiv.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(test);</span><br><span class="line">    &#125;;</span><br><span class="line">    oDiv = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
