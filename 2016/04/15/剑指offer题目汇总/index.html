@@ -7,7 +7,7 @@
     
 
     <title>
-      分类 
+      剑指offer题目汇总 | 纪晔 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,16 +16,22 @@
     
     
 
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://summerface.github.io/archive/index.html">
+    <meta name="description" content="1.复制字符串，替换字符串中的空格2.从尾到头打印链表。（借助栈，分迭代和递归两种方法）3.重建二叉树。（已知前序中序遍历，重构二叉树。递归法）4.旋转数字中的最小数字。（输入递增排序数组的一个旋转，输出旋转数组的最小元素。 二分查找，关键点是如果a[first] a[last] a[mid]都相同的时候，需进行顺序查找 ）
+
+递归除了效率问题，还可能会引起更严重的问题，调用栈溢出。因为需要为每一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指offer题目汇总 | 纪晔">
+<meta property="og:url" content="http://summerface.github.io/2016/04/15/剑指offer题目汇总/index.html">
 <meta property="og:site_name" content="纪晔">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-03-31T04:20:34.000Z">
+<meta property="og:description" content="1.复制字符串，替换字符串中的空格2.从尾到头打印链表。（借助栈，分迭代和递归两种方法）3.重建二叉树。（已知前序中序遍历，重构二叉树。递归法）4.旋转数字中的最小数字。（输入递增排序数组的一个旋转，输出旋转数组的最小元素。 二分查找，关键点是如果a[first] a[last] a[mid]都相同的时候，需进行顺序查找 ）
+
+递归除了效率问题，还可能会引起更严重的问题，调用栈溢出。因为需要为每一">
+<meta property="og:updated_time" content="2016-04-15T08:03:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description">
+<meta name="twitter:title" content="剑指offer题目汇总 | 纪晔">
+<meta name="twitter:description" content="1.复制字符串，替换字符串中的空格2.从尾到头打印链表。（借助栈，分迭代和递归两种方法）3.重建二叉树。（已知前序中序遍历，重构二叉树。递归法）4.旋转数字中的最小数字。（输入递增排序数组的一个旋转，输出旋转数组的最小元素。 二分查找，关键点是如果a[first] a[last] a[mid]都相同的时候，需进行顺序查找 ）
+
+递归除了效率问题，还可能会引起更严重的问题，调用栈溢出。因为需要为每一">
     
     
     
@@ -149,64 +155,49 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">分类</h1>
+    <h1 class="post-title">剑指offer题目汇总</h1>
 
-    <section id="post-content" class="article-content post">
-        
-    </section>
+    
 
+    <div class="post-meta">
+      <time datetime="2016-04-15" class="post-meta__date date">2016-04-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/标签/剑指offer/">剑指offer</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
 
   </header>
 
+  <section id="post-content" class="article-content post">
+    <p>1.复制字符串，替换字符串中的空格<br>2.从尾到头打印链表。（借助栈，分迭代和递归两种方法）<br>3.重建二叉树。（已知前序中序遍历，重构二叉树。递归法）<br>4.旋转数字中的最小数字。（输入递增排序数组的一个旋转，输出旋转数组的最小元素。<strong> 二分查找，关键点是如果a[first] a[last] a[mid]都相同的时候，需进行顺序查找 </strong>）</p>
+<ul>
+<li>递归除了效率问题，还可能会引起更严重的问题，调用栈溢出。因为需要为每一次函数调用在内存栈中分配空间，而每个进层的栈容量是有限的。当递归调用层级太深的时候，就会超出栈的容量，从而导致栈溢出。</li>
+</ul>
+<p>5.斐波那契数列（采用循环方法，而非递归）<br>6.二进制中1的个数。（位运算）</p>
+<ul>
+<li>位运算总共五种:<strong> 与，或，异或，左移，右移 </strong><br>与：都为1才为1<br>或：有一个为1则为1<br>异或：相同为0，不同为1<br>左移：m&lt;&lt;n 表示把m左移n位，左移n位的时候，最左边的n位被丢弃，最右边补充n个0<br>右移：右移的时候，右边的n位被丢弃，处理左侧的时候，若数字为无符号，用0填充左边n位。如果     是负数，则右移之后在最左边补n个1</li>
+</ul>
+<p>7.</p>
+
+  </section>
+
+  
+  
 </article>
 
-<div class="archive-meta">
 
-
-
-
-    <h3>標籤</h3>
-    <div class="tagslist">
-        
-            
-                <span><a href="/标签/javascript/" title="javascript">javascript<sup>8</sup></a></span>
-            
-        
-            
-                <span><a href="/标签/leetcode/" title="leetcode">leetcode<sup>7</sup></a></span>
-            
-        
-            
-                <span><a href="/标签/剑指offer/" title="剑指offer">剑指offer<sup>5</sup></a></span>
-            
-        
-            
-                <span><a href="/标签/css/" title="css">css<sup>2</sup></a></span>
-            
-        
-            
-                <span><a href="/标签/前端面试/" title="前端面试">前端面试<sup>1</sup></a></span>
-            
-        
-            
-                <span><a href="/标签/html/" title="html">html<sup>1</sup></a></span>
-            
-        
-            
-                <span><a href="/标签/react/" title="react">react<sup>1</sup></a></span>
-            
-        
-    </div>
-
-
-
-    <h3>所有文章</h3>
-    <div class="archiveslist">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/文章/2016/04/">April 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/文章/2016/03/">March 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/文章/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/文章/2015/11/">November 2015</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-
-
-</div>
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -234,6 +225,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->

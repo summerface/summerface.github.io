@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      你不知道的javascript(上卷) | 纪晔 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="纪晔">
+    
+    
+
+    <meta name="description" content="作用域
+匿名函数表达式 函数表达式可以匿名 而函数声明不可以省略函数名.
+函数被包含在一对（）括号内部，就变成了一个表达式，通过在末尾加上一个（）就变成了立即执行函数。
+立即执行函数表达式的另一个普遍用法是把他们当作函数调用并传递参数进去。如下：
+12345(function(global)&amp;#123;	var a=3;	console.log(a);	console.log(window.a);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你不知道的javascript(上卷) | 纪晔">
+<meta property="og:url" content="http://summerface.github.io/2016/04/13/你不知道的javascript上卷/index.html">
+<meta property="og:site_name" content="纪晔">
+<meta property="og:description" content="作用域
+匿名函数表达式 函数表达式可以匿名 而函数声明不可以省略函数名.
+函数被包含在一对（）括号内部，就变成了一个表达式，通过在末尾加上一个（）就变成了立即执行函数。
+立即执行函数表达式的另一个普遍用法是把他们当作函数调用并传递参数进去。如下：
+12345(function(global)&amp;#123;	var a=3;	console.log(a);	console.log(window.a);">
+<meta property="og:updated_time" content="2016-04-14T14:56:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你不知道的javascript(上卷) | 纪晔">
+<meta name="twitter:description" content="作用域
+匿名函数表达式 函数表达式可以匿名 而函数声明不可以省略函数名.
+函数被包含在一对（）括号内部，就变成了一个表达式，通过在末尾加上一个（）就变成了立即执行函数。
+立即执行函数表达式的另一个普遍用法是把他们当作函数调用并传递参数进去。如下：
+12345(function(global)&amp;#123;	var a=3;	console.log(a);	console.log(window.a);">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight.css" type="text/css">
+    <link rel="stylesheet" href="/css/archive.css" type="text/css">
+    <link rel="stylesheet" href="/css/china-social-icon.css" type="text/css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">纪晔</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">你不知道的javascript(上卷)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-13" class="post-meta__date date">2016-04-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/标签/javascript/">javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="作用域">作用域</h1><ul>
+<li>匿名函数表达式 函数表达式可以匿名 而函数声明不可以省略函数名.</li>
+<li>函数被包含在一对（）括号内部，就变成了一个表达式，通过在末尾加上一个（）就变成了立即执行函数。</li>
+<li><p>立即执行函数表达式的另一个普遍用法是把他们当作函数调用并传递参数进去。如下：</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">(<span class="keyword">global</span>)</span><span class="collection">&#123;</span><br><span class="line">	var a=3;</span><br><span class="line">	console.log<span class="list">(<span class="keyword">a</span>)</span><span class="comment">;</span></span><br><span class="line">	console.log<span class="list">(<span class="keyword">window.a</span>)</span><span class="comment">;</span></span><br><span class="line"> &#125;</span><span class="list">(<span class="keyword">window</span>)</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>let会为创建的变量隐形的添加一个快作用域，但是let进行的生命不会再块作用域中进行提升。</p>
+</li>
+<li>const同样用来创建块作用域变量，但其值是固定的，之后任何试图修改值的操作都会引起错误。</li>
+</ul>
+<h1 id="提升">提升</h1><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="literal">a</span>)<span class="comment">;</span></span><br><span class="line">var <span class="literal">a</span>=<span class="number">2</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码输出为undefined;<br>正确的思考思路是：包含变量和函数在内的所有声明都会在代码被执行前首先被处理。当遇到var a = 2;时，javascript编译器将其看成两个声明 var a; a = 2;  第一个定义声明在编译阶段进行，第二个赋值声明会被留在原地等待执行阶段。<br>即：先声明 后赋值。* 只有声明本身会被提升，而赋值或其他运行逻辑会留在原地，如果提升改变了代码执行的顺序，会造成严重破坏。</p>
+<ul>
+<li>函数声明会被提升，但是函数表达式不会被提升。</li>
+<li>函数首先会被提升，其次才是变量。</li>
+<li>尽量避免在块内部声明函数。</li>
+</ul>
+<h1 id="作用域闭包">作用域闭包</h1><p>当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">boo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> boo();</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure></p>
+<p>boo()依然保持着对foo作用域的引用，而这个饮用就叫做闭包。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wait</span>(<span class="params">message</span>)</span>&#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(message);</span><br><span class="line">	&#125;,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line">wait(<span class="string">"hello there"</span>);</span><br></pre></td></tr></table></figure>
+<p>在定时器，时间监听器，ajax请求，跨窗口通信，web worker或者任何其他移步（或同步）任务中，只要使用了回调函数，实际上就是在使用闭包。</p>
+<ul>
+<li>立即执行函数表达式创建了闭包，也是最常用来创建可以被封闭期来的闭包的工具。与闭包息息相关即使本身并不会真的使用闭包。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">	setTimeout(<span class="function">function <span class="title">timer</span><span class="params">()</span></span>&#123;</span><br><span class="line">		console.<span class="built_in">log</span>(i);</span><br><span class="line">	&#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上，上述代码以每秒一次的频率输出五次6.<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for<span class="list">(<span class="keyword">var</span> i=1<span class="comment">;i&lt;=5;i++)&#123;</span></span><br><span class="line">	<span class="list">(<span class="keyword">function</span><span class="list">(<span class="keyword">j</span>)</span>&#123;</span><br><span class="line">		setTimeout<span class="list">(<span class="keyword">function</span> timer<span class="list">()</span>&#123;</span><br><span class="line">			console.log<span class="list">(<span class="keyword">j</span>)</span><span class="comment">;</span></span><br><span class="line">		&#125;,i*1000)</span><span class="comment">;</span></span><br><span class="line">	&#125;)</span><span class="list">(<span class="keyword">i</span>)</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>第一段代码，循环共享一个作用域，而第二段里，为每个迭代都生成了一个新的作用域，使得延迟函数的回调都可以将心得作用域封闭在每个迭代内部，每个迭代中会含有一个具有正确值的变量供访问。</p>
+<p>块作用域和闭包共同使用的方法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(let i =<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">	setTimeout(<span class="function">function <span class="title">timer</span><span class="params">()</span></span>&#123;</span><br><span class="line">		console.<span class="built_in">log</span>(i);</span><br><span class="line">	&#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="模块">模块</h2><p>模块代码模式利用了闭包。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">module</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> something=[];</span><br><span class="line">	<span class="keyword">var</span> another = <span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(something);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">doAnother</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(something.join(<span class="string">"."</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> &#123;doSomething:doSomething,doAnother:doAnother&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="built_in">module</span>();</span><br><span class="line">foo.doSomething();</span><br><span class="line">foo.doAnother();</span><br></pre></td></tr></table></figure></p>
+<p>上述代码模式称为模块，最常见的视线模块模式的方法被称为模块暴露。<br>doSomething,doAnother：模块的公共API<br>模块模式具备两个必要条件：</p>
+<ul>
+<li>必须有外部的封闭函数，该函数必须至少被调用一次（每次调用都会创建一个新的模块实例）。</li>
+<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有变量的属性。</li>
+</ul>
+<p>单例模式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = (<span class="function"><span class="keyword">function</span> <span class="title">module</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> something=[];</span><br><span class="line">	<span class="keyword">var</span> another = <span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(something);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">doAnother</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(something.join(<span class="string">"."</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> &#123;doSomething:doSomething,doAnother:doAnother&#125;;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br><span class="line">foo.doSomething();</span><br><span class="line">foo.doAnother();</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>模块也是普通的函数，也可以接受参数。<br>模块模式另一个简单但强大的变化用法是命名将要作为公共API返回的对象。</p>
+</li>
+<li><p>大多数模块加载器管理器本质上都是将这种模块定义封装进一个友好的API</p>
+</li>
+</ul>
+<h1 id="this和原型对象">this和原型对象</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">	id:<span class="string">"awesome"</span>,</span><br><span class="line">	cool:<span class="function"><span class="keyword">function</span> <span class="title">coolFn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> id = <span class="string">"not awesome"</span>;</span><br><span class="line">obj.cool();<span class="comment">//awesome</span></span><br><span class="line">setTimeout(obj.cool(),<span class="number">100</span>);<span class="comment">//not awesome</span></span><br></pre></td></tr></table></figure>
+<p>通过es6的箭头函数或者bind都可以解决。</p>
+<p>*this是在运行时绑定的，而不是在编写的时候绑定的，他的上下文取决于函数调用时的各种条件。</p>
+<h2 id="this全面解析">this全面解析</h2><h3 id="绑定规则">绑定规则</h3><ul>
+<li>默认绑定</li>
+<li>隐式绑定</li>
+<li>显示绑定</li>
+<li>new绑定<br>优先级：new&gt;显示&gt;隐式&gt;默认</li>
+</ul>
+<h1 id="对象">对象</h1><h3 id="形式">形式</h3><p>js六种主要类型：string number boolean null undefined object<br>其中基本类型是前五个。<br>不同对象在底层都表示为二进制，在js里二进制前三位如果都是0的话，会被判断为object类型，null的二进制表示为全0，所以执行typeof的时候，会返回object<br>对象的两种形式</p>
+<ul>
+<li><p>构造形式</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Object();</span><br><span class="line">obj.key = <span class="keyword">value</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文字形式</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> obj =&#123;</span><br><span class="line">	<span class="built_in">key</span>:<span class="built_in">value</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str =<span class="string">"i am a string"</span>;</span><br><span class="line"><span class="keyword">typeof</span> str;<span class="comment">//string</span></span><br><span class="line">str <span class="keyword">instanceof</span> <span class="built_in">String</span>;<span class="comment">//false    str为字面量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"i am a string"</span>);</span><br><span class="line">type <span class="keyword">of</span> str1;<span class="comment">//object;</span></span><br><span class="line">str1 <span class="keyword">instanceof</span> <span class="built_in">String</span>;<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(str1);<span class="comment">//[Object String]  str1为对象</span></span><br></pre></td></tr></table></figure>
+<p>null和undefined没有对应的构造形式，只有文字形式。<br>Date只有构造形式没有文字形式。<br>对于Object，Array，Function，RegExp无论使用文字形式还是构造形式，都是对象而不是字面量</p>
+<h3 id="对象访问的两种方法">对象访问的两种方法</h3><ul>
+<li>属性访问 .a</li>
+<li>键值访问 [‘a’]<br>区别在于.操作符要求属性名满足标识符的命名规范，而[]接受任意utf-8或者unicode字符串作为属性名。<br>es6增加了可计算属性名<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> prefix</span> = 'foo';</span><br><span class="line"><span class="variable"><span class="keyword">var</span> obj</span> = &#123;</span><br><span class="line">	[prefix+<span class="string">"bar"</span>]:<span class="string">"hello"</span></span><br><span class="line">&#125;</span><br><span class="line">obj[<span class="string">"foobar"</span>];<span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>数组也是对象，虽然每个下标都是整数，但是仍可以给数组添加属性<br>即使给数组添加了属性，数组的长度还是没有发生变化。但是如果添加的属性看起来像一个数组，那它会先变成一个数值下标。<h3 id="复制对象">复制对象</h3>首先判断深复制还是浅复制。如果是浅复制，复制出的新对象中属性的值回复制就对象中的值，但是如果就对象中的属性为引用，那么新对象中复制出来的属性仍为原来引用，但是深复制则还会复制引用。</li>
+</ul>
+<ul>
+<li>json安全复制<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringfy(someObj));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>JSON.parse()指的是解析json字符串为对象。</p>
+<ul>
+<li>es6 Object.assign()用来实现浅复制。<br>第一个参数是目标对象，之后还可以跟一个或者多个源对象。会遍历一个或多个源对象所有可枚举的自由键，并复制他们到新对象。但是源对象属性的一些特性，比如（writable）不会被复制到目标对象。<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newObj = <span class="built_in">Object</span>.assign(&#123;&#125;,myObj);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="属性描述符configurable">属性描述符configurable</h4><p>configurable（是否可配置）是单向操作，无法撤销，一旦定义，只有不可修改。但有一个小例外：即使不可配置，但writable可由true修改为false，反之报错。若为false，可此属性也不可删除。</p>
+<h4 id="禁止拓展">禁止拓展</h4><p>Object.preventExtensions(..)不可对对象进行任何拓展。</p>
+<h4 id="密封">密封</h4><p>Object.seal()会创建一个密封的对象。实际上就是调用禁止拓展并把所有属性记为configurable:false;</p>
+<h4 id="冻结">冻结</h4><p>Object.freeze()创建一个冻结对象。实际上是调用seal并且把所有属性标记为writable:false;<br>这个方法是可以应用在对象级别最高的不可变性。</p>
+<h3 id="Getter和Setter">Getter和Setter</h3><p>对象默认的[[GET]]和[[PUT]]操作分别可以控制属性值的设置和获取。<br>在ES5中，使用getter和setter部分改写默认操作。但智能应用在单个属性上，不能应用到整个对象上。</p>
+<ul>
+<li>getter 是一个隐藏函数，在获取属性值的时候调用。</li>
+<li>setter 是一个隐藏函数，在设置属性值的时候调用。</li>
+</ul>
+<p>当给一个属性定义getter setter 或者两者都有的时候，这个属性会被定义为访问描述符。对于访问描述符来说，js会忽略他们的value和writable，取而代之的是关心set和get还有configurable，enumerable</p>
+<p><strong>通常getter和setter事成对出现的。</strong><br>for in 操作，枚举出对象里可枚举的属性<br>hasOwnProperty() 判断对象哪是否有此属性。</p>
+<ul>
+<li>propertyIsEnumerable()会检查给定的属性名称是否直接存在于对象(而非原型链)并满足enumerable:ture</li>
+<li>Object.kesy()会返回一个数组，包含所有可枚举属性。</li>
+<li>Object.getOwnPropertyNames()会返回一个数组，包含所有属性，无论是否可枚举。</li>
+</ul>
+<h3 id="遍历数组">遍历数组</h3><p>es6 提供了直接遍历值而不是数组下标的方法：for of<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span>(var v of myArr)&#123;</span><br><span class="line">	console.<span class="built_in">log</span>(v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>原理是首先会向北访问对象请求一个迭代器对象，然后通过调用迭代器对象的next()方法来遍历所有返回值。</p>
+<h1 id="混合对象“类”">混合对象“类”</h1><p>面向类的设计模式：<strong>实例化，继承和多态</strong><br>es6 super含义是“超类”，表示当前类的父类或祖先类。<br>多态：任何方法都可以引用继承层次中高层的方法。另一方面是在继承链的不同层次中一个方法名可以被定义多次，当调用方法时会自动选择合适的定义。<br>子类可以通过相对多态引用（super）来访问父类Foo的行为。子类得到的仅仅是继承自父类行为的一个副本。子类对继承到的一个方法进行重写不会影响父类中的方法，这两个方法互不影响，因此才能使用相对多态引用访问弗雷中的方法。</p>
+<p><strong> 多态并不表示子类和父类有关联，子类得到的只是父类的一份副本。类的继承其实就是复制。 </strong></p>
+<h3 id="混入">混入</h3><p>继承或实例化时，js的对象机制并不会自动执行复制行为。js只有对象并不存在可以被实例化的类。一个对象并不会被复制到其他对象，他们会被关联起来。由于在其他语言中类表现出来的都是复制行为，因此js开发者也想出了一个方法来模拟类的复制行为，这个方法就是<strong> 混入 </strong>。<br>混入的类型：显式和隐式。</p>
+<h4 id="显式混入">显式混入</h4><p>许多类库将其称为extend，为了方便理解，我们称之为mixin。</p>
+<h5 id="再说多态">再说多态</h5><p>vehicle.drive.call(this)显式多态。car,vehicle都包含drive（）函数，car继承自vehicle，为了指明调用对象，必须通过名称显式制定vehicle对象并调用他的drive（）函数。</p>
+<h5 id="混合复制">混合复制</h5><p>javascript的函数无法真正的复制，所以只能复制对共享函数对象的引用。如果修改了共享的函数对象，比如添加了属性，那么复制了此函数的类都会受到影响。</p>
+<h5 id="寄生继承">寄生继承</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vehicle</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.engines = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">Vehicle.prototype.ignition = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"Turning on my engine"</span>)</span><br><span class="line">&#125;;</span><br><span class="line">Vehicle.prototype.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.ignition();</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"steering and moving forward"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>)</span>&#123;<span class="comment">//寄生类car</span></span><br><span class="line">	<span class="keyword">var</span> car = <span class="keyword">new</span> Vehicle();</span><br><span class="line">	car.wheels = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">var</span> vehDrive = car.drive();</span><br><span class="line">	car.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		vehDrive.call(<span class="keyword">this</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span>+<span class="keyword">this</span>.wheels+<span class="string">"wheels"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> car;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line">myCar.drive();</span><br></pre></td></tr></table></figure>
+<h4 id="隐式混入">隐式混入</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Something = &#123;</span><br><span class="line">	cool:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.greeting = <span class="string">"Hello World"</span>;</span><br><span class="line">	<span class="keyword">this</span>.count = <span class="keyword">this</span>.count?<span class="keyword">this</span>.cout+<span class="number">1</span>:<span class="number">1</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line">Somethis.cool();</span><br><span class="line">Something.greeting;<span class="comment">//Hello World</span></span><br><span class="line">Something.count;<span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Another = &#123;</span><br><span class="line">	cool:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Something.cool.call(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Another.cool();</span><br><span class="line">Another.greeting;<span class="comment">//"Hello World"</span></span><br><span class="line">Another.count;<span class="comment">//1 不共享</span></span><br></pre></td></tr></table></figure>
+<p>把something的行为混入到Another</p>
+<h3 id="总结">总结</h3><p>类意味着复制。<br>传统类被市里化的时候，它的行为会被复制到实例中。类被继承的时候，行为也会被复制到子类中。</p>
+<p>多态看起来似乎是从子类中引用父类，但是本质上引用的其实是复制的结果。</p>
+<p>js并不会像类那样自动创建对象的副本。<br>混入模式可以用来模拟类的复制行为。但通常会产生丑陋脆弱的语法。<br>此外显示混入实际上无法完全模拟类的复制行为，因为对象只能复制引用，无法复制被引用呃对象或函数本身。</p>
+<h1 id="原型">原型</h1><h2 id="Prototype">Prototype</h2><p>内置属性，其实就是对于其他对象的引用。几乎所有的对象在创建时Prototype属性都会被赋予一个非空的值。但可以为空，虽然很少见。<br>所有普通的prototype链最终都会指向内置的object.prototype。<br>如果foo不存在于myobj上而是存在于原型链上，myobj.foo=”bar”会出现的三种情况：</p>
+<ul>
+<li>原型链上存在foo且writable:true时，在myobj上创建屏蔽属性。</li>
+<li>原型链存在foo且weitable:false，无法修改已有属性活着在myobj上创建屏蔽属性。若在严格模式下，会报错，否则，此赋值语句被忽略。</li>
+<li>若原型链上存在foo并且它是一个setter，那就会调用这个setter。foo不会被添加到myobj，也不会重新定义foo这个setter。<br><strong> 若希望在第二种和第三种情况下也屏蔽foo，则不能使用＝，而使用Object.defineProperty()来向myobj添加foo。 </strong></li>
+</ul>
+<h2 id="“类”">“类”</h2><h3 id="构造函数">构造函数</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span><span class="params">()</span><span class="comment">&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="title">Foo</span>.<span class="title">prototype</span>.<span class="title">constructor</span> === <span class="title">Foo</span>;</span><span class="comment">//true</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Foo();</span><br><span class="line">a.<span class="keyword">constructor</span> === Foo;<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>Foo.prototpe默认有一个共有并且不可枚举的属性.constructor，这个属性引用的是对象关联的函数。</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

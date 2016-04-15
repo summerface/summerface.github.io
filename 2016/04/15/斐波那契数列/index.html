@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      斐波那契数列 | 纪晔 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="纪晔">
+    
+    
+
+    <meta name="description" content="递归法最基本的解法，递归，方法如下：1234567891011long long Fibonacci(unsigned int n)&amp;#123;	if(n&amp;lt;=0)&amp;#123;		return 0;	&amp;#125;	else if(n == 1)&amp;#123;		return 1;	&amp;#125;	else&amp;#123;		return Fibonacci(n-1)+Fibonacci(n-2);	&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="斐波那契数列 | 纪晔">
+<meta property="og:url" content="http://summerface.github.io/2016/04/15/斐波那契数列/index.html">
+<meta property="og:site_name" content="纪晔">
+<meta property="og:description" content="递归法最基本的解法，递归，方法如下：1234567891011long long Fibonacci(unsigned int n)&amp;#123;	if(n&amp;lt;=0)&amp;#123;		return 0;	&amp;#125;	else if(n == 1)&amp;#123;		return 1;	&amp;#125;	else&amp;#123;		return Fibonacci(n-1)+Fibonacci(n-2);	&amp;">
+<meta property="og:updated_time" content="2016-04-15T07:51:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="斐波那契数列 | 纪晔">
+<meta name="twitter:description" content="递归法最基本的解法，递归，方法如下：1234567891011long long Fibonacci(unsigned int n)&amp;#123;	if(n&amp;lt;=0)&amp;#123;		return 0;	&amp;#125;	else if(n == 1)&amp;#123;		return 1;	&amp;#125;	else&amp;#123;		return Fibonacci(n-1)+Fibonacci(n-2);	&amp;">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight.css" type="text/css">
+    <link rel="stylesheet" href="/css/archive.css" type="text/css">
+    <link rel="stylesheet" href="/css/china-social-icon.css" type="text/css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">纪晔</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">斐波那契数列</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-15" class="post-meta__date date">2016-04-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/标签/剑指offer/">剑指offer</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="递归法">递归法</h3><p>最基本的解法，递归，方法如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Fibonacci</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Fibonacci(n-<span class="number">1</span>)+Fibonacci(n-<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度随n以指数形式递增。</p>
+<h3 id="实用解法（循环的方法）">实用解法（循环的方法）</h3><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">long long <span class="type">Fibonacci</span>(unsigned n)&#123;</span><br><span class="line">	<span class="type">int</span> <span class="literal">result</span>[<span class="number">2</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">	<span class="keyword">if</span>(n&lt;<span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">result</span>[n];</span><br><span class="line">	&#125;</span><br><span class="line">	long long fibMinusOne = <span class="number">1</span>;</span><br><span class="line">	long long fibMinusTwo = <span class="number">0</span>;</span><br><span class="line">	long long <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(unsigned <span class="type">int</span> i = <span class="number">2</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="literal">result</span> = fibMinusOne + fibMinusTwo;</span><br><span class="line">		fibMinusTwo = fibMinusOne;</span><br><span class="line">		fibMinusOne = <span class="literal">result</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="演变题型">演变题型</h3><ul>
+<li><p>台阶问题：一只青蛙一次跳1级台阶，也可以跳2级台阶。求该青蛙跳上一个n级台阶总共有多少跳法。<br>可以看成是斐波那契数列的应用。</p>
+</li>
+<li><p>改为一只青蛙一次可以跳1，2，级台阶…也可以跳n级台阶，那么方法一共多少种。<br>数学归纳法算得：二的n减1次方种。</p>
+</li>
+<li><p>用2<em>1的小矩形横着或者竖着去覆盖更大的矩形，则八个2</em>1的小矩形无重叠的覆盖一个2*8的大矩形，共多少种方法。</p>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
