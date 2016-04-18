@@ -16,7 +16,7 @@
     
     
 
-    <meta name="description" content="题目：实现一个函数，输入一个证书，输出该数二进制中表示中1的个数。要点：
+    <meta name="description" content="题目：实现一个函数，输入一个整数，输出该数二进制中表示中1的个数。要点：
 
 除法的效率比移位运算要低得多，实际应用中腰尽量地用移位运算代替乘除法。
 考虑到负数情况
@@ -26,16 +26,16 @@
 <meta property="og:title" content="二进制中1的个数 | 纪晔">
 <meta property="og:url" content="http://summerface.github.io/2016/04/15/二进制中1的个数/index.html">
 <meta property="og:site_name" content="纪晔">
-<meta property="og:description" content="题目：实现一个函数，输入一个证书，输出该数二进制中表示中1的个数。要点：
+<meta property="og:description" content="题目：实现一个函数，输入一个整数，输出该数二进制中表示中1的个数。要点：
 
 除法的效率比移位运算要低得多，实际应用中腰尽量地用移位运算代替乘除法。
 考虑到负数情况
 
 常规解法首先把n和1做与运算。判断最低位是不是1.然后把1左移得到2，判断第二位是不是1，依次运行下去。123456789101112int num(int n)&amp;#123;	int count = 0;	unsigned int f">
-<meta property="og:updated_time" content="2016-04-15T08:22:35.000Z">
+<meta property="og:updated_time" content="2016-04-15T08:35:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二进制中1的个数 | 纪晔">
-<meta name="twitter:description" content="题目：实现一个函数，输入一个证书，输出该数二进制中表示中1的个数。要点：
+<meta name="twitter:description" content="题目：实现一个函数，输入一个整数，输出该数二进制中表示中1的个数。要点：
 
 除法的效率比移位运算要低得多，实际应用中腰尽量地用移位运算代替乘除法。
 考虑到负数情况
@@ -190,7 +190,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>题目：实现一个函数，输入一个证书，输出该数二进制中表示中1的个数。<br>要点：</p>
+    <p>题目：实现一个函数，输入一个整数，输出该数二进制中表示中1的个数。<br>要点：</p>
 <ul>
 <li>除法的效率比移位运算要低得多，实际应用中腰尽量地用移位运算代替乘除法。</li>
 <li>考虑到负数情况</li>
@@ -198,7 +198,8 @@ classes that you can use:
 <h3 id="常规解法">常规解法</h3><p>首先把n和1做与运算。判断最低位是不是1.然后把1左移得到2，判断第二位是不是1，依次运行下去。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">num</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(flag)<span class="comment">//越界之后变为0</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n&amp;flag)&#123;</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">		flag = flag &lt;&lt; <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上述方法中，循环的次数等于整数二进制的位数。</p>
 <p>下面的方法有几个1则会循环几次</p>
-<h3 id="优化方法">优化方法</h3>
+<h3 id="优化方法">优化方法</h3><p>思路：把一个整数减去1，再与原整数进行位运算，会把原整数最右侧的1变为0，所以一个整数中二进制中有多少个1，就可以进行多少次这样的运算。<br> 代码如下：<br> <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> int num(int <span class="keyword">n</span>)&#123;</span><br><span class="line">     int <span class="keyword">count</span> = 0;</span><br><span class="line">     <span class="keyword">while</span>(<span class="keyword">n</span>)&#123;</span><br><span class="line">     	++<span class="keyword">count</span>;</span><br><span class="line">     	<span class="keyword">n</span> = (<span class="keyword">n</span>-1) &amp; <span class="keyword">n</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">return</span> <span class="keyword">count</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
   </section>
 
   
